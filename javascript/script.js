@@ -12,12 +12,12 @@ class continent {
     }
 }
 
-let Europe = new continent(0, '../images/Continent/Europe.jpeg', 'Europe', 'Europe');
-let Asie = new continent(1, '../images/Continent/Asie.jpeg', 'Asie', 'Asie');
-let AmériqueN = new continent(2, '../images/Continent/AmériqueN.jpg', 'AmériqueN', 'Amérique Du Nord');
-let AmériqueS = new continent(3, '../images/Continent/AmériqueS.jpeg', 'AmériqueS', 'Amérique du Sud');
-let Afrique = new continent(4, '../images/Continent/Afrique.jpeg', 'Afrique', 'Afrique');
-let IlesP = new continent(5, '../images/Continent/IlesP.jpeg', 'IlesP', 'Iles Paradisiaques');
+let Europe = new continent(0, '/images/Continent/Europe.jpeg', 'Europe', 'Europe');
+let Asie = new continent(1, '/images/Continent/Asie.jpeg', 'Asie', 'Asie');
+let AmériqueN = new continent(2, '/images/Continent/AmériqueN.jpg', 'AmériqueN', 'Amérique Du Nord');
+let AmériqueS = new continent(3, '/images/Continent/AmériqueS.jpeg', 'AmériqueS', 'Amérique du Sud');
+let Afrique = new continent(4, '/images/Continent/Afrique.jpeg', 'Afrique', 'Afrique');
+let IlesP = new continent(5, '/images/Continent/IlesP.jpeg', 'IlesP', 'Iles Paradisiaques');
 
 class ville{
     constructor(id,link,name,continent){
