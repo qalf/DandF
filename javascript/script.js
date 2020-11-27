@@ -50,7 +50,7 @@ let LstAsie =[Bankok,Bombay,Hanoï,HongKong,Pékin,Tokyo]
 afficheimg();
 function afficheimg() {
     let link = ''
-    if (URL === 'file:///D:/CPE%20Ecole/Agence%20de%20voyage/Agence-de-voyage/Agence%20Voyage/html/R%C3%A9servation.html'){
+    if (URL === 'https://qalf.github.io/DandF/index.html'){
         for (let i of LstContinent) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
