@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <script type="text/javascript" src="../../../../javascript/script.js"></script>
+        <link rel="stylesheet" href="../../../../css/styles.css">
+        <meta charset="UTF-8">
+        <title>DandF</title>
+    </head>
+
+    <body>
+        <header>
+            <h1> DandF</h1>
+            <nav>
+                <a class="bandeau" href="../../../Réservation.html" class="icon fa-Réservation"><span class="label"><img class="logo" src="../../../../images/Réservation.png"></span></a>
+                <a class="bandeau" href="../../../Panier.html" class="icon fa-Panier"><span class="label"><img class="logo" src="../../../../images/Panier.png"></span></a>
+                <a class="bandeau active" href="../../../Contact.html" class="icon fa-Contact"><span class="label"><img class="logo" src="../../../../images/Contact.png"></span></a>
+                <a class="bandeau" href="../../../Espace-perso.html" class="icon fa-Compte"><span class="label"><img class="logo" src="../../../../images/Compte.png"></span></a>
+            </nav>
+        </header>
+        <form>
+            <div class="informations">
+                <h3>Vos informations</h3>
+                    <label>Nom :</label>
+                    <input type="text" placeholder="Dupond">
+                    <label>Prénom :</label>
+                    <input type="text" placeholder="Jean">
+                    <label>Adresse e-mail :</label>
+                    <input type="text" placeholder="Jean.Dupond@voyage.fr">
+                    <label>Téléphone :</label>
+                    <input type="tel" placeholder="0618957403">
+            </div>
+            <div class="renseignement">
+                <h3>Votre voyage</h3>
+                    <label>Date de départ :</label>
+                    <input type="date" id="start" name="trip-start" value="2020-07-10" min="2020-07-10" max="2024-07-10">
+                    <label>Date de retour :</label>
+                    <input type="date" id="retun" name="trip-start" value="2020-07-10" min="2020-07-10" max="2024-07-10">
+                    <label>Petit-déjeuner ?:</label>
+                    <input type="checkbox" id="oui" name="oui" aria-checked="mixed">
+                    <label for="oui">Oui</label>
+                    <input type="checkbox" id="non" name="non" aria-checked="mixed">
+                    <label for="oui">Non</label>
+            </div>
+            <div class="supplement">
+                <h3>Nombre de voyageurs</h3>
+                    <label>Nombre d'adultes :</label>
+                    <select name="nbadultes">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <label>Enfants (-12 ans):</label>
+                    <select name="nbenfants">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                <label>Besoin d'un renseignement ?:</label>
+                <textarea placeholder="Quel renseignement souhaitez-vous ?" id="story" name="story" rows="5" cols="33"></textarea>
+                <label>Prix du voyage :</label>
+                <label>Soumettre la demande :</label>
+                <input type="submit" formaction="../../../Panier.html" value="Envoyer le formulaire">
+                <label>Remise à zéro :</label>
+                <input type="submit" value="Remise à zéro de la commande">
+            </div>
+        </form>
+        <footer>
+            <a href="#" class="icon fa-facebook"><span class="label"><img class="logo" src="../../../../images/Faecbook.png"></span></a>
+            <a href="#" class="icon fa-instagram"><span class="label"><img class="logo" src="../../../../images/Instagram.png"></span></a>
+            <a href="#" class="icon fa-twitter"><span class="label"><img class="logo" src="../../../../images/Twitter.png"></span></a>
+        </footer>
+        <a class="gotopbtn" href="#" ><img class="logo" src="../../../../images/Scroll.png"></a>
+    </body>
+</html>

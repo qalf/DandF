@@ -1,0 +1,284 @@
+html{
+    scroll-behavior: smooth;
+}
+#body{
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/sky.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 10px;
+    background-color: #1b1b1f;
+    -webkit-user-select: none; 
+    -webkit-touch-callout: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+}
+
+h1{
+    width: 25%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.erable{
+    width: 100%;
+    height: 100%;
+    filter: invert(100%);
+}
+
+.titre{
+    color: white;
+    text-align: center;
+    font-size: 200%;
+    font-family: sans-serif;
+    padding-left: 5%;
+    
+
+}
+
+.test{
+    width: 25%;
+}
+
+nav{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.bandeau{
+    height: 50%;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 150%;
+    padding: 0 1vw;
+}
+
+.bandeau-courant{
+    height: 50%;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 150%;
+    padding: 0 20px;
+}
+
+.bandeau-courant::after{
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.bandeau::after{
+    content: "";
+    display: flex;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+}
+.bandeau:hover::after{
+    width: 100%;
+    transition: width 0.3s;
+}
+
+.gotopbtn{
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+h3{
+    font-size: 30px;
+    color: black;
+    width: 100%;
+    font-family: monospace;
+}
+
+#container{
+    width: 100%;
+    height: 100%;
+}
+
+#affichage {
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 350px;
+    height: 237px;
+    border-radius: 10px;
+    margin: 20px 20px 20px 20px;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    transition: 1s;
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+.overlay{
+    width: 100%;
+    height: 0%;
+    background-color: rgba(0,0,0,0);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: rgba(255, 255, 255, 0);
+    text-align: center;
+    font-size: 200%;
+    overflow: hidden;
+    transition: 1s;
+    text-transform: uppercase ;
+    -webkit-user-select: none; 
+    -webkit-touch-callout: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+}
+
+
+footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #1b1b1f;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px 10px;
+}
+
+.bulle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    background-color: white;
+}
+
+.logo{
+     width: 20px;
+     height: 20px;
+}
+.logot{
+    width: 25px;
+    height: 25px;
+}
+
+.login-box{
+    width: 400px;
+    padding: 40px;
+    margin: 100px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    transform: center;
+}
+
+.login-box h4{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.user-box{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.user-box label{
+    padding: -500px;
+}
+
+.login-box form a{
+    padding: 0 20px;
+}
+
+form{
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+input, textarea{
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+
+input:focus, textarea:focus{
+    border-color: #000;
+}
+
+textarea{
+    vertical-align: top;
+    height: 5em;
+}
+
+.informations{
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #b2b2b2; 
+}
+
+.renseignement{
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #b2b2b2; 
+}
+
+.supplement{
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #b2b2b2; 
+}
+
