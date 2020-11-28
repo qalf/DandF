@@ -53,7 +53,7 @@ let Lima = new ville(2, '../images/AmériqueS/Lima.jpg', 'Lima', 'AmériqueS');
 let Rio = new ville(3, '../images/AmériqueS/Rio.jpg', 'Rio de Janeiro', 'AmériqueS');
 
 let CapeTown = new ville(0, '../images/Afrique/CapeTown.jpg', 'Cape Town', 'Afrique');
-let Casablanca = new ville(1, '../images/Afrique/Casablanca.jpg', 'Casablanca', 'Afrique');
+let Casablanca = new ville(1, '../images/Afrique/Casablanca.jpeg', 'Casablanca', 'Afrique');
 let Dubai = new ville(2, '../images/Afrique/Dubai.jpg', 'Dubaï', 'Afrique');
 let LeCaire = new ville(3, '../images/Afrique/LeCaire.jpg', 'Le Caire', 'Afrique');
 let Marrakesh = new ville(4, '../images/Afrique/Marrakesh.jpg', 'Marrakesh', 'Afrique');
