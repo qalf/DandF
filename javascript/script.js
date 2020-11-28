@@ -75,12 +75,19 @@ let LstAmériqueS = [BuenosAires,LacTiticaca,Lima,Rio];
 let LstAfrique = [CapeTown,Casablanca,Dubai,LeCaire,Marrakesh];
 let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
+fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+    .then(res => res.json())
+    .then(resjson => {
+        let temp = resjson.main.temp;
+    })
+
+
 afficheimg();
 function afficheimg() {
     let link = ''
     if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +' '+ temp +'</div></div>';
         }
         affichage.innerHTML += link;
     }
@@ -188,5 +195,4 @@ function resa(i) {
         var lien = 'https://qalf.github.io/DandF/'+chemin;
         document.location.href = lien;
     }
-
 }
