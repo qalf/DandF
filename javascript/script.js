@@ -92,7 +92,6 @@ function afficheimg() {
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueN.html'){
-        console.log(URL);
         for (var i of LstAmériqueN) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
