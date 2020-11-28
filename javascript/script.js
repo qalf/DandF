@@ -86,6 +86,7 @@ function afficheimg() {
         for (var i of LstEurope) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
             fetch('https://api.openweathermap.org/data/2.5/weather?q='+ i.name +'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+                console.log('https://api.openweathermap.org/data/2.5/weather?q='+ i.name +'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
                 .then(res => res.json())
                 .then(data => {
                     var temp = data.main.temp;
