@@ -94,7 +94,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=Londres&units=metric&ap
     .then(res => res.json())
     .then(data => {
         var temp = data.main.temp;
-        Paris.SetTemp(temp);
+        Londres.SetTemp(temp);
         overlay[1].innerHTML = Londres.name +'\n '+ Londres.temp;
 
 })
