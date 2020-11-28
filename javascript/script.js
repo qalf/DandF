@@ -88,7 +88,7 @@ function afficheimg() {
     let link = ''
     if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
         }
         affichage.innerHTML += link;
     }
