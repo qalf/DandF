@@ -79,6 +79,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appi
     .then(res => res.json())
     .then(resjson => {
         let temp = resjson.main.temp;
+        overlay.innerHTML = temp;
     })
 
 
@@ -87,7 +88,7 @@ function afficheimg() {
     let link = ''
     if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +' '+ temp +'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
         affichage.innerHTML += link;
     }
