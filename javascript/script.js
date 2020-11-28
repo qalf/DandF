@@ -14,8 +14,8 @@ class continent {
 
 let Europe = new continent(0, 'images/Continent/Europe.jpeg', 'html/Europe.html', 'Europe');
 let Asie = new continent(1, 'images/Continent/Asie.jpeg', 'html/Asie.html', 'Asie');
-let AmériqueN = new continent(2, 'images/Continent/AmériqueN.jpg', 'html/AmériqueN.html', 'Amérique Du Nord');
-let AmériqueS = new continent(3, 'images/Continent/AmériqueS.jpeg', 'html/AmériqueS.html', 'Amérique du Sud');
+let AmériqueN = new continent(2, 'images/Continent/AmériqueN.jpg', 'html/AmeriqueN.html', 'Amérique Du Nord');
+let AmériqueS = new continent(3, 'images/Continent/AmériqueS.jpeg', 'html/AmeriqueS.html', 'Amérique du Sud');
 let Afrique = new continent(4, 'images/Continent/Afrique.jpeg', 'html/Afrique.html', 'Afrique');
 let IlesP = new continent(5, 'images/Continent/IlesP.jpeg', 'html/IlesP.html', 'Iles Paradisiaques');
 
@@ -66,7 +66,7 @@ let Singapour = new ville(4, '../images/IlesP/Singapour.jpg', 'Singapour', 'Iles
 let Ubud = new ville(5, '../images/IlesP/Ubud.jpg', 'Ubud', 'IlesP');
 
 
-let LstContinent = [Europe, Asie,AmériqueN,AmériqueS,Afrique,IlesP];
+let LstContinent = [Europe,Asie,AmériqueN,AmériqueS,Afrique,IlesP];
 
 let LstEurope = [Paris,Barcelone,Londres,Rome,Stockholm];
 let LstAsie = [Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo];
@@ -91,13 +91,14 @@ function afficheimg() {
         }
         affichage.innerHTML += link;
     }
-    else if (URL === 'https://qalf.github.io/DandF/html/AmériqueN.html'){
+    else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueN.html'){
+        console.log(URL);
         for (var i of LstAmériqueN) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
         affichage.innerHTML += link;
     }
-    else if (URL === 'https://qalf.github.io/DandF/html/AmériqueS.html'){
+    else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueS.html'){
         for (var i of LstAmériqueS) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
