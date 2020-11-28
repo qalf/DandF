@@ -50,14 +50,14 @@ let LstAsie =[Bankok,Bombay,Hanoï,HongKong,Pékin,Tokyo]
 afficheimg();
 function afficheimg() {
     let link = ''
-    if (URL === 'file:///D:/CPE%20Ecole/Agence%20de%20voyage/Agence-de-voyage/Agence%20Voyage/html/Europe.html'){
+    if (URL === 'https://qalf.github.io/DandF/Europe.html'){
         for (let i of LstEurope) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
         affichage.innerHTML += link;
     }
 
-    if (URL === 'file:///D:/CPE%20Ecole/Agence%20de%20voyage/Agence-de-voyage/Agence%20Voyage/html/Asie.html'){
+    if (URL === 'https://qalf.github.io/DandF/Asie.html'){
         for (let i of LstAsie) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
@@ -101,14 +101,14 @@ function delimg(i) {
 }
 
 function resa(i) {
-    if (URL === 'file:///D:/CPE%20Ecole/Agence%20de%20voyage/Agence-de-voyage/Agence%20Voyage/html/R%C3%A9servation.html') {
+    if (URL === 'https://qalf.github.io/DandF/Europe.html') {
+        var lien = 'Résa.html';
+        document.location.href = lien;
+    }
+    else {
         var chemin = LstContinent[i].NomChemin;
         var lien = chemin+'.html';
         document.location.href = lien;
     }
 
-    if (URL === 'file:///D:/CPE%20Ecole/Agence%20de%20voyage/Agence-de-voyage/Agence%20Voyage/html/Europe.html') {
-        var lien = 'Résa.html';
-        document.location.href = lien;
-    }
 }
