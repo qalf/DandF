@@ -91,9 +91,9 @@ function afficheimg() {
                     var temp = data.main.temp;
                     overlay[i.id].innerHTML = i.name + temp;
                 })
+        }
         affichage.innerHTML += link;
     }
-}
 
     else if (URL === 'https://qalf.github.io/DandF/html/Asie.html'){
         for (var i of LstAsie) {
