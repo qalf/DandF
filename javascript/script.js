@@ -13,7 +13,7 @@ class continent {
 }
 
 let Europe = new continent(0, 'images/Continent/Europe.jpeg', 'html/Europe.html', 'Europe');
-let Asie = new continent(1, 'images/Continent/Asie.jpeg', 'Asie', 'html/Asie.html');
+let Asie = new continent(1, 'images/Continent/Asie.jpeg', 'html/Asie.html', 'Asie');
 let AmériqueN = new continent(2, 'images/Continent/AmériqueN.jpg', 'html/AmériqueN.html', 'Amérique Du Nord');
 let AmériqueS = new continent(3, 'images/Continent/AmériqueS.jpeg', 'html/AmériqueS.html', 'Amérique du Sud');
 let Afrique = new continent(4, 'images/Continent/Afrique.jpeg', 'html/Afrique.html', 'Afrique');
