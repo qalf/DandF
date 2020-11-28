@@ -20,11 +20,15 @@ let Afrique = new continent(4, 'images/Continent/Afrique.jpeg', 'html/Afrique.ht
 let IlesP = new continent(5, 'images/Continent/IlesP.jpeg', 'html/IlesP.html', 'Iles Paradisiaques');
 
 class ville{
-    constructor(id,link,name,continent){
+    constructor(id,link,name,continent,temp=0){
         this.id = id;
         this.link = link;
         this.name = name;
         this.continent = continent
+        this.temp = temp;
+    }
+    SetTemp(temp){
+        this.temp = temp;
     }
 }
 
@@ -76,6 +80,14 @@ let LstAfrique = [CapeTown,Casablanca,Dubai,LeCaire,Marrakesh];
 let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 
+fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+    .then(res => res.json())
+    .then(data => {
+        var temp = data.main.temp;
+        Paris.SetTemp(temp);
+        console.log(Paris.temp);
+
+    })
 
 
 afficheimg();
@@ -84,13 +96,7 @@ function afficheimg() {
     let link = ''
     if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
-            fetch('https://api.openweathermap.org/data/2.5/weather?q='+ i.name +'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-                .then(res => res.json())
-                .then(data => {
-                    var temp = data.main.temp;
-                    overlay[i.id].innerHTML = i.name + temp;
-                })
+            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name + i.temp +'</div></div>';
         }
         affichage.innerHTML += link;
     }
