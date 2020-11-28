@@ -85,7 +85,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appi
     .then(data => {
         var temp = data.main.temp;
         Paris.SetTemp(temp);
-        overlay[0].innerHTML = Paris.name +'\n '+ Paris.temp;
+        overlay[0].innerHTML = Paris.name +'<br>'+ Paris.temp +'°C';
 
 })
 
@@ -95,7 +95,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=Londres&units=metric&ap
     .then(data => {
         var temp = data.main.temp;
         Londres.SetTemp(temp);
-        overlay[1].innerHTML = Londres.name +'\n '+ Londres.temp;
+        overlay[1].innerHTML = Londres.name +'<br>'+ Londres.temp +'°C';
 
 })
 
