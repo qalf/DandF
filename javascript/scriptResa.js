@@ -7,7 +7,6 @@ function dureeSejour() {
 }
   
 function DateVerif() {
-  //var nbjours = dureeSejour();
   var datejour = new Date();
   var datedepart = new Date(document.getElementById("date_depart").value);
   var dateretour = new Date(document.getElementById("date_retour").value);
