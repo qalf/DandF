@@ -45,12 +45,12 @@ let Cancun = new ville(0, '../images/AmériqueN/Cancun.jpg', 'Cancun', 'Amériqu
 let LosAngeles = new ville(1, '../images/AmériqueN/LosAngeles.jpg', 'Los Angeles', 'AmériqueN');
 let Miami = new ville(2, '../images/AmériqueN/Miami.jpg', 'Miami', 'AmériqueN');
 let Montreal = new ville(3, '../images/AmériqueN/Montreal.jpg', 'Montreal', 'AmériqueN');
-let NewYork = new ville(4, '../images/AmériqueN/NewYork.jpg', 'New York', 'AmériqueN');
+let NewYork = new ville(4, '../images/AmériqueN/NewYork.jpeg', 'New York', 'AmériqueN');
 
 let BuenosAires = new ville(0, '../images/AmériqueS/BuenosAires.jpg', 'Buenos-Aires', 'AmériqueS');
 let LacTiticaca = new ville(1, '../images/AmériqueS/LacTiticaca.jpg', 'Lac Titicaca', 'AmériqueS');
 let Lima = new ville(2, '../images/AmériqueS/Lima.jpg', 'Lima', 'AmériqueS');
-let Rio = new ville(3, '../images/AmériqueS/Rio.jpg', 'Rio de Janeiro', 'AmériqueS');
+let Rio = new ville(3, '../images/AmériqueS/Rio.jpeg', 'Rio de Janeiro', 'AmériqueS');
 
 let CapeTown = new ville(0, '../images/Afrique/CapeTown.jpg', 'Cape Town', 'Afrique');
 let Casablanca = new ville(1, '../images/Afrique/Casablanca.jpeg', 'Casablanca', 'Afrique');
