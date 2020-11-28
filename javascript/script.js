@@ -75,24 +75,25 @@ let LstAmériqueS = [BuenosAires,LacTiticaca,Lima,Rio];
 let LstAfrique = [CapeTown,Casablanca,Dubai,LeCaire,Marrakesh];
 let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
-fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-    .then(res => res.json())
-    .then(resjson => {
-        let temp = resjson.main.temp;
-        overlay.innerHTML = temp;
-        console.log(overlay.innerHTML);
-    })
+
 
 
 afficheimg();
+
 function afficheimg() {
     let link = ''
     if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
-        }
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+ i.name +'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+                .then(res => res.json())
+                .then(data => {
+                    var temp = data.main.temp;
+                    overlay[i.id].innerHTML = i.name + temp;
+                })
         affichage.innerHTML += link;
     }
+}
 
     else if (URL === 'https://qalf.github.io/DandF/html/Asie.html'){
         for (var i of LstAsie) {
@@ -156,6 +157,7 @@ function delimg(i) {
     image[i].style.marginTop = "20px";
     image[i].style.marginBottom = "20px";
 
+    
     overlay[i].style.backgroundColor = "rgba(0,0,0,0)";
     overlay[i].style.height = "0%" ;
     overlay[i].style.color = "rgba(255, 255, 255,0)" ;
