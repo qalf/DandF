@@ -69,7 +69,7 @@ let Ubud = new ville(5, '../images/IlesP/Ubud.jpg', 'Ubud', 'IlesP');
 let LstContinent = [Europe, Asie,AmériqueN,AmériqueS,Afrique,IlesP];
 
 let LstEurope = [Paris,Barcelone,Londres,Rome,Stockholm];
-let LstAsie = [Bankok,Bombay,Hanoï,HongKong,Pékin,Tokyo];
+let LstAsie = [Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo];
 let LstAmériqueN = [Cancun, LosAngeles, Miami,Montreal,NewYork];
 let LstAmériqueS = [BuenosAires,LacTiticaca,Lima,Rio];
 let LstAfrique = [CapeTown,Casablanca,Dubai,LeCaire,Marrakesh];
