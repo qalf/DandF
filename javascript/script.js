@@ -80,6 +80,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appi
     .then(resjson => {
         let temp = resjson.main.temp;
         overlay.innerHTML = temp;
+        console.log(overlay.innerHTML);
     })
 
 
