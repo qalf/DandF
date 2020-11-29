@@ -4,7 +4,7 @@ let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
 
-let sejour_id = new URLSearchParams(window.location.search).get("id")
+let sejour_id = new URLSearchParams(window.location.search).get("id");
 
 console.log[sejour_id];
 
