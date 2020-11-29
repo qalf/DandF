@@ -4,7 +4,6 @@ let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
 
-
 class continent {
     constructor(id, link, NomChemin, name) {
         this.id = id;
