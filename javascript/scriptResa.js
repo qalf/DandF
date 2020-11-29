@@ -1,6 +1,4 @@
-let sejour_id = new URLSearchParams(window.location.search).get("id")
 
-console.log[sejour_id];
 
 var prixJourneeAdultes = 100; //Prix à récupérer dans base de données JSON
 function dureeSejour() {

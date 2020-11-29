@@ -4,6 +4,10 @@ let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
 
+let sejour_id = new URLSearchParams(window.location.search).get("id")
+
+console.log[sejour_id];
+
 class continent {
     constructor(id, link, NomChemin, name) {
         this.id = id;
@@ -423,7 +427,3 @@ function resa(i) {
         document.location.href = lien;
     }
 }
-
-let sejour_id = new URLSearchParams(window.location.search).get("id")
-
-console.log[sejour_id];
