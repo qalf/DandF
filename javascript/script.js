@@ -6,7 +6,7 @@ let body = document.getElementById("body");
 
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
-console.log[sejour_id];
+console.log[typeof sejour_id];
 
 class continent {
     constructor(id, link, NomChemin, name) {
