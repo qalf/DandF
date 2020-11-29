@@ -373,7 +373,6 @@ function infosimg(i) {
     image[i].setAttribute('onmouseout', 'delimg(' + i + ')');
     image[i].setAttribute('onclick', 'resa(' + i + ')');
 
-
 }
 
 function delimg(i) {
