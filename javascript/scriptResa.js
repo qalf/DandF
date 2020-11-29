@@ -4,7 +4,7 @@ for (let i = 0;1;30){
   var Ville = document.getElementsByClassName("ville").value;
   console.log(Ville);
   if (i === sejour_id){
-    
+
     }
 }
 
@@ -15,7 +15,7 @@ function dureeSejour() {
   date = parseInt((dateretour - datedepart)/(86400000));
   return date
 }
-  
+
 function DateVerif() {
   var datejour = new Date();
   var datedepart = new Date(document.getElementById("date_depart").value);
