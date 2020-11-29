@@ -4,8 +4,8 @@ for (let i = 0;1;30){
   var Ville = document.getElementsByClassName("ville").value;
   console.log(Ville);
   if (i === sejour_id){
-
-  }
+    
+    }
 }
 
 
