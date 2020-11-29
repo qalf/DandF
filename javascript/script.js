@@ -68,6 +68,9 @@ let Seychelles = new ville(28,3, '../images/IlesP/Seychelles.jpg', 'Seychelles',
 let Singapour = new ville(29,4, '../images/IlesP/Singapour.jpg', 'Singapour', 'IlesP', 950);
 let Ubud = new ville(30,5, '../images/IlesP/Ubud.jpg', 'Ubud', 'IlesP', 880);
 
+let PrixCroissant =[Stockholm, LacTiticaca, Rio, Lima, CapeTown, Rome, Barcelone, Londres, Paris, Marrakesh, Casablanca, Cancun, BuenosAires, Hanoï, LeCaire, Bangkok, Montreal, Pékin, Bombay, HongKong, Tokyo, LosAngeles, NewYork, Miami, Auckland, Hawai, Seychelles, Ubud, Dubai, Caraibes, Singapour];
+
+let PrixDécroissant =[Singapour, Caraibes, Dubai, Ubud, Seychelles, Hawai, Auckland, Miami, NewYork, LosAngeles, Tokyo, HongKong, Bombay, Pékin, Montreal, Bangkok, LeCaire, Hanoï, BuenosAires, Cancun, Casablanca, Marrakesh, Paris, Londres, Barcelone, Rome, CapeTown, Lima, Rio, LacTiticaca, Stockholm,];
 
 let LstContinent = [Europe,Asie,AmériqueN,AmériqueS,Afrique,IlesP];
 
@@ -79,6 +82,7 @@ let LstAfrique = [CapeTown,Casablanca,Dubai,LeCaire,Marrakesh];
 let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
+
 
 
 if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
@@ -315,7 +319,21 @@ afficheimg();
 
 function afficheimg() {
     let link = ''
-    if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
+    if (document.getElementById('tri').value == '1') {
+        for (var i of PrixCroissant) {
+            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+        }
+        affichage.innerHTML += link;
+    }
+
+    else if (document.getElementById('tri').value == '2') {
+        for (var i of PrixDécroissant) {
+            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+        }
+        affichage.innerHTML += link;
+    }
+
+    else if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
         }
@@ -352,6 +370,13 @@ function afficheimg() {
         }
         affichage.innerHTML += link;
     }
+    else if (document.getElementById('tri').value == '3'){
+        for (var i of LstContinent) {
+            link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+        }
+        affichage.innerHTML += link;
+    }
+
     else {
         for (var i of LstContinent) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
