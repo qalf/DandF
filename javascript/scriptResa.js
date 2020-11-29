@@ -1,3 +1,12 @@
+let sejour_id = new URLSearchParams(window.location.search).get("id");
+
+for (let i = 0;1;30){
+    if (i === sejour_id){
+    }
+    else
+}
+
+
 function dureeSejour() {
   var datedepart = new Date(document.getElementById("date_depart").value);
   var dateretour = new Date(document.getElementById("date_retour").value);

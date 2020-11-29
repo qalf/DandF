@@ -4,15 +4,6 @@ let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
 
-let sejour_id = new URLSearchParams(window.location.search).get("id");
-
-for (let i = 0;1;30){
-    if (i === sejour_id){
-    }
-    else
-}
-
-console.log(sejour_id);
 
 class continent {
     constructor(id, link, NomChemin, name) {
