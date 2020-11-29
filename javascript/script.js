@@ -4,6 +4,10 @@ let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
 
+let sejour_id = new URLSearchParams(window.location.search).get("id")
+
+console.log[sejour_id];
+
 class continent {
     constructor(id, link, NomChemin, name) {
         this.id = id;
@@ -306,8 +310,6 @@ if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
             overlay[5].innerHTML = Ubud.name +'<br>'+ Math.round(temp) +'°C';
     })
 }
-
-console.log(body.scrollHeight);
 
 afficheimg();
 
