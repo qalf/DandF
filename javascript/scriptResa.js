@@ -1,4 +1,3 @@
-var prixJourneeAdultes = 100; //Prix à récupérer dans base de données JSON
 function dureeSejour() {
   var datedepart = new Date(document.getElementById("date_depart").value);
   var dateretour = new Date(document.getElementById("date_retour").value);
@@ -47,12 +46,4 @@ function DateVerif() {
     var prixTotal = prixEnfants() + prixAdultes() + petitDej();
     document.getElementsByClassName("prix_voyage")[0].innerHTML = prixTotal;
     return
-  }
-
-fetch("./javascript/BddVoyages.json")
-.then(function(response)){
-  return response.json()
-}).then(function(json)){
-  Voyages = json;
-  initialiseVoyage(Voyages);
   }
