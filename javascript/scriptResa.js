@@ -48,3 +48,11 @@ function DateVerif() {
     document.getElementsByClassName("prix_voyage")[0].innerHTML = prixTotal;
     return
   }
+
+fetch("./javascript/BddVoyages.json")
+.then(function(response)){
+  return response.json()
+}).then(function(json)){
+  Voyages = json;
+  initialiseVoyage(Voyages);
+  }
