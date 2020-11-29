@@ -398,12 +398,12 @@ function resa(i) {
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
         document.location.href = lien;
     }
-    else if (URL === 'https://qalf.github.io/DandF/html/AmériqueN.html') {
+    else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueN.html') {
         var id = LstAmériqueN[i].id
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
         document.location.href = lien;
     }
-    else if (URL === 'https://qalf.github.io/DandF/html/AmériqueS.html') {
+    else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueS.html') {
         var id = LstAmériqueS[i].id
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
         document.location.href = lien;
