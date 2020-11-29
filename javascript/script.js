@@ -82,14 +82,14 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
     for (var i of LstEurope){
         fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-            .then(res => res.json())
-            .then(data => {
-                var temp = data.main.temp;
-                var id = i.id_continent;
-                overlay[id].innerHTML = i.name +'<br>'+ Math.round(temp) +'°C';
-                console.log(temp);
-                console.log(id);
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
         })
+        var id = i.id_continent;
+        overlay[id].innerHTML = i.name +'<br>'+ Math.round(temp) +'°C';
+        console.log(temp);
+        console.log(id);
     }
 }
 
