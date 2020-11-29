@@ -1,7 +1,8 @@
 let affichage = document.getElementById("affichage");
 let image = document.getElementsByClassName("image");
 let overlay = document.getElementsByClassName("overlay");
-let URL = document.location.href
+let URL = document.location.href;
+let body = document.getElementById("body");
 
 class continent {
     constructor(id, link, NomChemin, name) {
@@ -305,6 +306,8 @@ if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
             overlay[5].innerHTML = Ubud.name +'<br>'+ Math.round(temp) +'°C';
     })
 }
+
+console.log(body.scrollHeight);
 
 afficheimg();
 
