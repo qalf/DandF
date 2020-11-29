@@ -307,8 +307,6 @@ if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
     })
 }
 
-console.log(body.scrollHeight);
-
 afficheimg();
 
 function afficheimg() {
@@ -425,3 +423,7 @@ function resa(i) {
         document.location.href = lien;
     }
 }
+
+let sejour_id = new URLSearchParams(window.location.search).get("id")
+
+console.log[sejour_id];
