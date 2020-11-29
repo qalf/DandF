@@ -80,20 +80,41 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 
 if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
-    for (var i of LstEurope){
-        fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
         .then(res => res.json())
         .then(data => {
             var temp = data.main.temp;
-        })
-        var id = i.id_continent;
-        overlay[id].innerHTML = i.name +'<br>'+ Math.round(temp) +'°C';
-        console.log(temp);
-        console.log(id);
-    }
+            overlay[0].innerHTML = Paris.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Barcelone&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[1].innerHTML = Barcelone.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Londres&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[2].innerHTML = Londres.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Rome&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[3].innerHTML = Rome.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[4].innerHTML = Stockholm.name +'<br>'+ Math.round(temp) +'°C';
+    })
 }
-
-
 
 if (URL === 'https://qalf.github.io/DandF/html/Asie.html'){
     fetch('https://api.openweathermap.org/data/2.5/weather?q=Bangkok&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
