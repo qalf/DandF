@@ -12,8 +12,6 @@ for (let i = 0;1;30){
     else
 }
 
-console.log(sejour_id);
-
 class continent {
     constructor(id, link, NomChemin, name) {
         this.id = id;
