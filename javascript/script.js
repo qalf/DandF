@@ -87,6 +87,8 @@ if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
                 var temp = data.main.temp;
                 var id = i.id_continent;
                 overlay[id].innerHTML = i.name +'<br>'+ Math.round(temp) +'°C';
+                console.log(temp);
+                console.log(id);
         })
     }
 }
