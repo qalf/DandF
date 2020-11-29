@@ -80,25 +80,51 @@ let LstAfrique = [CapeTown,Casablanca,Dubai,LeCaire,Marrakesh];
 let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 
-fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-    .then(res => res.json())
-    .then(data => {
-        var temp = data.main.temp;
-        Paris.SetTemp(temp);
-        overlay[0].innerHTML = Paris.name +'<br>'+ Paris.temp +'°C';
+if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            Paris.SetTemp(Math.round(temp));
+            overlay[0].innerHTML = Paris.name +'<br>'+ Paris.temp +'°C';
 
-})
+    })
 
 
-fetch('https://api.openweathermap.org/data/2.5/weather?q=Londres&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-    .then(res => res.json())
-    .then(data => {
-        var temp = data.main.temp;
-        Londres.SetTemp(temp);
-        overlay[1].innerHTML = Londres.name +'<br>'+ Londres.temp +'°C';
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Barcelone&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            Barcelone.SetTemp(Math.round(temp));
+            overlay[1].innerHTML = Barcelone.name +'<br>'+ Barcelone.temp +'°C';
 
-})
+    })
 
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Londres&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            Londres.SetTemp(Math.round(temp));
+            overlay[2].innerHTML = Londres.name +'<br>'+ Londres.temp +'°C';
+    })
+    
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Rome&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            Rome.SetTemp(Math.round(temp));
+            overlay[3].innerHTML = Rome.name +'<br>'+ Rome.temp +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            Stockholm.SetTemp(Math.round(temp));
+            overlay[4].innerHTML = Stockholm.name +'<br>'+ Stockholm.temp +'°C';
+    })
+}
 
 
 afficheimg();
