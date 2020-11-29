@@ -20,15 +20,11 @@ let Afrique = new continent(4, 'images/Continent/Afrique.jpeg', 'html/Afrique.ht
 let IlesP = new continent(5, 'images/Continent/IlesP.jpeg', 'html/IlesP.html', 'Iles Paradisiaques');
 
 class ville{
-    constructor(id,link,name,continent,temp=0){
+    constructor(id,link,name,continent){
         this.id = id;
         this.link = link;
         this.name = name;
         this.continent = continent
-        this.temp = temp;
-    }
-    SetTemp(temp){
-        this.temp = temp;
     }
 }
 
@@ -85,47 +81,230 @@ if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         .then(res => res.json())
         .then(data => {
             var temp = data.main.temp;
-            Paris.SetTemp(Math.round(temp));
-            overlay[0].innerHTML = Paris.name +'<br>'+ Paris.temp +'°C';
-
+            overlay[0].innerHTML = Paris.name +'<br>'+ Math.round(temp) +'°C';
     })
-
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=Barcelone&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
         .then(res => res.json())
         .then(data => {
             var temp = data.main.temp;
-            Barcelone.SetTemp(Math.round(temp));
-            overlay[1].innerHTML = Barcelone.name +'<br>'+ Barcelone.temp +'°C';
-
+            overlay[1].innerHTML = Barcelone.name +'<br>'+ Math.round(temp) +'°C';
     })
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=Londres&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
         .then(res => res.json())
         .then(data => {
             var temp = data.main.temp;
-            Londres.SetTemp(Math.round(temp));
-            overlay[2].innerHTML = Londres.name +'<br>'+ Londres.temp +'°C';
+            overlay[2].innerHTML = Londres.name +'<br>'+ Math.round(temp) +'°C';
     })
-    
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=Rome&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
         .then(res => res.json())
         .then(data => {
             var temp = data.main.temp;
-            Rome.SetTemp(Math.round(temp));
-            overlay[3].innerHTML = Rome.name +'<br>'+ Rome.temp +'°C';
+            overlay[3].innerHTML = Rome.name +'<br>'+ Math.round(temp) +'°C';
     })
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
         .then(res => res.json())
         .then(data => {
             var temp = data.main.temp;
-            Stockholm.SetTemp(Math.round(temp));
-            overlay[4].innerHTML = Stockholm.name +'<br>'+ Stockholm.temp +'°C';
+            overlay[4].innerHTML = Stockholm.name +'<br>'+ Math.round(temp) +'°C';
     })
 }
 
+if (URL === 'https://qalf.github.io/DandF/html/Asie.html'){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Bangkok&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[0].innerHTML = Bangkok.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Bombay&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[1].innerHTML = Bombay.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Hanoï&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[2].innerHTML = Hanoï.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=HongKong&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[3].innerHTML = HongKong.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Pékin&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[4].innerHTML = Pékin.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Tokyo&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[5].innerHTML = Tokyo.name +'<br>'+ Math.round(temp) +'°C';
+    })
+}
+
+if (URL === 'https://qalf.github.io/DandF/html/AmeriqueN.html'){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Cancun&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[0].innerHTML = Cancun.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Los Angeles&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[1].innerHTML = LosAngeles.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Miami&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[2].innerHTML = Miami.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Montreal&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[3].innerHTML = Montreal.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=New York&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[4].innerHTML = NewYork.name +'<br>'+ Math.round(temp) +'°C';
+    })
+}
+
+if (URL === 'https://qalf.github.io/DandF/html/AmeriqueS.html'){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Buenos Aires&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[0].innerHTML = BuenosAires.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Puno&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[1].innerHTML = LacTiticaca.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Lima&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[2].innerHTML = Lima.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Rio de Janeiro&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[3].innerHTML = Rio.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+}
+
+if (URL === 'https://qalf.github.io/DandF/html/Afrique.html'){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Cape Town&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[0].innerHTML = CapeTown.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Casablanca&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[1].innerHTML = Casablanca.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Dubai&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[2].innerHTML = Dubai.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Le Caire&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[3].innerHTML = LeCaire.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Marrakesh&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[4].innerHTML = Marrakesh.name +'<br>'+ Math.round(temp) +'°C';
+    })
+}
+
+if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Auckland&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[0].innerHTML = Auckland.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Bridgetown&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[1].innerHTML = Caraibes.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Hawai&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[2].innerHTML = Hawai.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Seychelles&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[3].innerHTML = Seychelles.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Singapour&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[4].innerHTML = Singapour.name +'<br>'+ Math.round(temp) +'°C';
+    })
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Ubud&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+        .then(res => res.json())
+        .then(data => {
+            var temp = data.main.temp;
+            overlay[5].innerHTML = Ubud.name +'<br>'+ Math.round(temp) +'°C';
+    })
+}
 
 afficheimg();
 
