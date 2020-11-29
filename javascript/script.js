@@ -30,42 +30,42 @@ class ville{
     }
 }
 
-let Paris = new ville(0, '../images/Europe/Paris.jpg', 'Paris', 'Europe');
-let Barcelone = new ville(1, '../images/Europe/Barcelone.jpg', 'Barcelone', 'Europe');
-let Londres = new ville(2, '../images/Europe/Londres.jpg', 'Londres', 'Europe');
-let Rome = new ville(3, '../images/Europe/Rome.jpg', 'Rome', 'Europe');
-let Stockholm = new ville(4, '../images/Europe/Stockholm.jpg', 'Stockholm', 'Europe');
+let Paris = new ville(0, '../images/Europe/Paris.jpg', 'Paris', 'Europe', 400);
+let Barcelone = new ville(1, '../images/Europe/Barcelone.jpg', 'Barcelone', 'Europe', 370);
+let Londres = new ville(2, '../images/Europe/Londres.jpg', 'Londres', 'Europe', 380);
+let Rome = new ville(3, '../images/Europe/Rome.jpg', 'Rome', 'Europe', 360);
+let Stockholm = new ville(4, '../images/Europe/Stockholm.jpg', 'Stockholm', 'Europe', 200);
 
-let Bangkok = new ville(5, '../images/Asie/Bangkok.jpg', 'Bangkok', 'Asie');
-let Bombay = new ville(6, '../images/Asie/Bombay.jpg', 'Bombay', 'Asie');
-let Hanoï = new ville(7, '../images/Asie/Hanoï.jpg', 'Hanoï', 'Asie');
-let HongKong = new ville(8, '../images/Asie/HongKong.jpg', 'Hong-Kong', 'Asie');
-let Pékin = new ville(9, '../images/Asie/Pékin.jpg', 'Pékin', 'Asie');
-let Tokyo = new ville(10, '../images/Asie/Tokyo.jpg', 'Tokyo', 'Asie');
+let Bangkok = new ville(5, '../images/Asie/Bangkok.jpg', 'Bangkok', 'Asie', 500);
+let Bombay = new ville(6, '../images/Asie/Bombay.jpg', 'Bombay', 'Asie', 550);
+let Hanoï = new ville(7, '../images/Asie/Hanoï.jpg', 'Hanoï', 'Asie', 475);
+let HongKong = new ville(8, '../images/Asie/HongKong.jpg', 'Hong-Kong', 'Asie', 570);
+let Pékin = new ville(9, '../images/Asie/Pékin.jpg', 'Pékin', 'Asie', 530);
+let Tokyo = new ville(10, '../images/Asie/Tokyo.jpg', 'Tokyo', 'Asie', 600);
 
-let Cancun = new ville(11, '../images/AmériqueN/Cancun.jpg', 'Cancun', 'AmériqueN');
-let LosAngeles = new ville(12, '../images/AmériqueN/LosAngeles.jpg', 'Los Angeles', 'AmériqueN');
-let Miami = new ville(13, '../images/AmériqueN/Miami.jpg', 'Miami', 'AmériqueN');
-let Montreal = new ville(14, '../images/AmériqueN/Montreal.jpg', 'Montreal', 'AmériqueN');
-let NewYork = new ville(15, '../images/AmériqueN/NewYork.jpeg', 'New York', 'AmériqueN');
+let Cancun = new ville(11, '../images/AmériqueN/Cancun.jpg', 'Cancun', 'AmériqueN', 450);
+let LosAngeles = new ville(12, '../images/AmériqueN/LosAngeles.jpg', 'Los Angeles', 'AmériqueN', 700);
+let Miami = new ville(13, '../images/AmériqueN/Miami.jpg', 'Miami', 'AmériqueN', 750);
+let Montreal = new ville(14, '../images/AmériqueN/Montreal.jpg', 'Montreal', 'AmériqueN', 500);
+let NewYork = new ville(15, '../images/AmériqueN/NewYork.jpeg', 'New York', 'AmériqueN', 700);
 
-let BuenosAires = new ville(16, '../images/AmériqueS/BuenosAires.jpg', 'Buenos-Aires', 'AmériqueS');
-let LacTiticaca = new ville(17, '../images/AmériqueS/LacTiticaca.jpg', 'Lac Titicaca', 'AmériqueS');
-let Lima = new ville(18, '../images/AmériqueS/Lima.jpg', 'Lima', 'AmériqueS');
-let Rio = new ville(19, '../images/AmériqueS/Rio.jpeg', 'Rio de Janeiro', 'AmériqueS');
+let BuenosAires = new ville(16, '../images/AmériqueS/BuenosAires.jpg', 'Buenos-Aires', 'AmériqueS', 470);
+let LacTiticaca = new ville(17, '../images/AmériqueS/LacTiticaca.jpg', 'Lac Titicaca', 'AmériqueS', 300);
+let Lima = new ville(18, '../images/AmériqueS/Lima.jpg', 'Lima', 'AmériqueS', 350);
+let Rio = new ville(19, '../images/AmériqueS/Rio.jpeg', 'Rio de Janeiro', 'AmériqueS', 320);
 
-let CapeTown = new ville(20, '../images/Afrique/CapeTown.jpg', 'Cape Town', 'Afrique');
-let Casablanca = new ville(21, '../images/Afrique/Casablanca.jpeg', 'Casablanca', 'Afrique');
-let Dubai = new ville(22, '../images/Afrique/Dubai.jpg', 'Dubaï', 'Afrique');
-let LeCaire = new ville(23, '../images/Afrique/LeCaire.jpg', 'Le Caire', 'Afrique');
-let Marrakesh = new ville(24, '../images/Afrique/Marrakesh.jpg', 'Marrakesh', 'Afrique');
+let CapeTown = new ville(20, '../images/Afrique/CapeTown.jpg', 'Cape Town', 'Afrique', 360);
+let Casablanca = new ville(21, '../images/Afrique/Casablanca.jpeg', 'Casablanca', 'Afrique', 450);
+let Dubai = new ville(22, '../images/Afrique/Dubai.jpg', 'Dubaï', 'Afrique', 900);
+let LeCaire = new ville(23, '../images/Afrique/LeCaire.jpg', 'Le Caire', 'Afrique', 480);
+let Marrakesh = new ville(24, '../images/Afrique/Marrakesh.jpg', 'Marrakesh', 'Afrique', 430);
 
-let Auckland = new ville(25, '../images/IlesP/Auckland.jpg', 'Auckland', 'IlesP');
-let Caraibes = new ville(26, '../images/IlesP/Caraibes.jpg', 'Caraïbes', 'IlesP');
-let Hawai = new ville(27, '../images/IlesP/Hawai.jpg', 'Hawaï', 'IlesP');
-let Seychelles = new ville(28, '../images/IlesP/Seychelles.jpg', 'Seychelles', 'IlesP');
-let Singapour = new ville(29, '../images/IlesP/Singapour.jpg', 'Singapour', 'IlesP');
-let Ubud = new ville(30, '../images/IlesP/Ubud.jpg', 'Ubud', 'IlesP');
+let Auckland = new ville(25, '../images/IlesP/Auckland.jpg', 'Auckland', 'IlesP', 820);
+let Caraibes = new ville(26, '../images/IlesP/Caraibes.jpg', 'Caraïbes', 'IlesP', 920);
+let Hawai = new ville(27, '../images/IlesP/Hawai.jpg', 'Hawaï', 'IlesP', 850);
+let Seychelles = new ville(28, '../images/IlesP/Seychelles.jpg', 'Seychelles', 'IlesP', 870);
+let Singapour = new ville(29, '../images/IlesP/Singapour.jpg', 'Singapour', 'IlesP', 950);
+let Ubud = new ville(30, '../images/IlesP/Ubud.jpg', 'Ubud', 'IlesP', 880);
 
 
 let LstContinent = [Europe,Asie,AmériqueN,AmériqueS,Afrique,IlesP];
