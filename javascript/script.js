@@ -91,13 +91,24 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 function search(){
-    for (var i of LstVille){
-        if (barre.value == i.name){
-            tri.value = '4';
-            return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+    if (URL === 'https://qalf.github.io/DandF/html/Europe.html' || 'https://qalf.github.io/DandF/html/Asie.html' || 'https://qalf.github.io/DandF/html/AmeriqueN.html' || 'https://qalf.github.io/DandF/html/AmeriqueS.html' || 'https://qalf.github.io/DandF/html/Afrique.html' || 'https://qalf.github.io/DandF/html/IlesP.html'){
+        for (var i of LstVille){
+            if (barre.value == i.name){
+                return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            }
         }
+        alert("La destination n'est pas encore dans notre catalogue");
     }
-    alert("La destination n'est pas encore dans notre catalogue");
+    
+    else {
+        for (var i of LstVille){
+            if (barre.value == i.name){
+                tri.value = '4';
+                return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            }
+        }
+        alert("La destination n'est pas encore dans notre catalogue");
+    }
 }
 
 barre.addEventListener('keyup',function(event){
@@ -233,9 +244,6 @@ function resa(h) {
         window.location.assign(lien);
     }
 }
-
-
-
 
 
 

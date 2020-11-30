@@ -1,27 +1,4 @@
-let affichage = document.getElementById("affichage");
-let image = document.getElementsByClassName("image");
-let overlay = document.getElementsByClassName("overlay");
 let URL = window.location.href;
-let body = document.getElementById("body");
-let barre = document.getElementById('barre');
-let loupe = document.getElementById('loupe');
-
-
-class continent {
-    constructor(id, link, NomChemin, name) {
-        this.id = id;
-        this.link = link;
-        this.NomChemin = NomChemin;
-        this.name = name
-    }
-}
-
-let Europe = new continent(0, 'images/Continent/Europe.jpeg', 'html/Europe.html', 'Europe');
-let Asie = new continent(1, 'images/Continent/Asie.jpeg', 'html/Asie.html', 'Asie');
-let AmeriqueN = new continent(2, 'images/Continent/AmériqueN.jpg', 'html/AmeriqueN.html', 'Amérique Du Nord');
-let AmeriqueS = new continent(3, 'images/Continent/AmériqueS.jpeg', 'html/AmeriqueS.html', 'Amérique du Sud');
-let Afrique = new continent(4, 'images/Continent/Afrique.jpeg', 'html/Afrique.html', 'Afrique');
-let IlesP = new continent(5, 'images/Continent/IlesP.jpeg', 'html/IlesP.html', 'Iles Paradisiaques');
 
 class ville{
     constructor(id,id_continent,id_croissant,id_décroissant,link,name,continent,prix,temp){
@@ -74,26 +51,13 @@ let Seychelles = new ville(28,3,26,4, 'images/IlesP/Seychelles.jpg', 'Seychelles
 let Singapour = new ville(29,4,30,0, 'images/IlesP/Singapour.jpg', 'Singapour', 'IlesP', 950);
 let Ubud = new ville(30,5,27,3, 'images/IlesP/Ubud.jpg', 'Ubud', 'IlesP', 880);
 
-let PrixCroissant =[Stockholm, LacTiticaca, Rio, Lima, CapeTown, Rome, Barcelone, Londres, Paris, Marrakesh, Casablanca, Cancun, BuenosAires, Hanoï, LeCaire, Bangkok, Montreal, Pékin, Bombay, HongKong, Tokyo, LosAngeles, NewYork, Miami, Auckland, Hawai, Seychelles, Ubud, Dubai, Caraibes, Singapour];
-
-let PrixDécroissant =[Singapour, Caraibes, Dubai, Ubud, Seychelles, Hawai, Auckland, Miami, NewYork, LosAngeles, Tokyo, HongKong, Bombay, Pékin, Montreal, Bangkok, LeCaire, Hanoï, BuenosAires, Cancun, Casablanca, Marrakesh, Paris, Londres, Barcelone, Rome, CapeTown, Lima, Rio, LacTiticaca, Stockholm,];
-
-let LstContinent = [Europe,Asie,AmeriqueN,AmeriqueS,Afrique,IlesP];
-
-let LstEurope = [Paris,Barcelone,Londres,Rome,Stockholm];
-let LstAsie = [Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo];
-let LstAmeriqueN = [Cancun, LosAngeles, Miami,Montreal,NewYork];
-let LstAmeriqueS = [BuenosAires,LacTiticaca,Lima,Rio];
-let LstAfrique = [CapeTown,Casablanca,Dubai,LeCaire,Marrakesh];
-let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
-
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 function search(){
     for (var i of LstVille){
         if (barre.value == i.name){
             window.location.assign('https://qalf.github.io/DandF/index.html');
-            return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            return
         }
     }
     alert("La destination n'est pas encore dans notre catalogue");
@@ -104,4 +68,3 @@ barre.addEventListener('keyup',function(event){
         loupe.click();
     }
 })
-

@@ -3,6 +3,7 @@ let image = document.getElementsByClassName("image");
 let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
+let barre = document.getElementById("barre");
 
 class continent {
     constructor(id, link, NomChemin, name) {
@@ -79,6 +80,22 @@ let LstAfrique = [CapeTown,Casablanca,Dubai,LeCaire,Marrakesh];
 let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
+
+function search(){
+  for (var i of LstVille){
+      if (barre.value == i.name){
+          window.location.assign('https://qalf.github.io/DandF/index.html');
+          return
+      }
+  }
+  alert("La destination n'est pas encore dans notre catalogue");
+}
+
+barre.addEventListener('keyup',function(event){
+  if (event.keyCode === 13) {
+      loupe.click();
+  }
+})
 
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
