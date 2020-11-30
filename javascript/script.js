@@ -86,14 +86,6 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
-for (var i of LstVille){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-    .then(res => res.json())
-    .then(data => {
-        var temp = data.main.temp;
-        overlay[i].innerHTML = i.name +'<br>'+ i.temp;
-    })
-}
 
 afficheimg();
 function afficheimg() {
@@ -109,7 +101,7 @@ function afficheimg() {
 
     else if (tri.value == '2') {
         for (var i of PrixCroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
             fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
             .then(res => res.json())
             .then(data => {
