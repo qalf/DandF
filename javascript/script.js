@@ -90,6 +90,7 @@ let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,Hon
 afficheimg();
 function afficheimg() {
     let link = ''
+    affichage.innerHTML = '';
     var tri = document.getElementById('tri');
 
     if (tri.value == '1'){
@@ -112,7 +113,7 @@ function afficheimg() {
             link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
 
         }
-           affichage.innerHTML += link;
+        affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
@@ -158,7 +159,6 @@ function afficheimg() {
         }
         affichage.innerHTML += link;
     }
-
 }
 
 function infosimg(i,h) {
