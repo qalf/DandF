@@ -3,6 +3,9 @@ let image = document.getElementsByClassName("image");
 let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
+if (URL === 'https://qalf.github.io/DandF/index.html'){
+    let tri = document.getElementById('tri');
+}
 
 class continent {
     constructor(id, link, NomChemin, name) {
@@ -320,18 +323,23 @@ afficheimg();
 
 function afficheimg() {
     let link = ''
-    if (document.getElementById('tri') !== null) {
-        if (document.getElementById('tri').value == '1') {
+    if (URL === 'https://qalf.github.io/DandF/index.html') {
+        if (tri.value === 1) {
             for (var i of PrixCroissant) {
                 link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
             }
             affichage.innerHTML += link;
         }
-    }
-    else if (document.getElementById('tri') !== null){
-        if (document.getElementById('tri').value == '2') {
+
+        else if (tri.value === 2) {
             for (var i of PrixDécroissant) {
                 link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+            }
+            affichage.innerHTML += link;
+        }
+        else if (tri.value === 3){
+            for (var i of LstContinent) {
+                link += '<div class ="image" onmouseover="infosimg('+ i.id +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
             }
             affichage.innerHTML += link;
         }
@@ -374,12 +382,6 @@ function afficheimg() {
         }
         affichage.innerHTML += link;
     }
-    else if (document.getElementById('tri').value == '3'){
-        for (var i of LstContinent) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
-        }
-        affichage.innerHTML += link;
-    }
 
     else {
         for (var i of LstContinent) {
@@ -419,19 +421,29 @@ function delimg(i) {
 }
 
 function resa(h) {
-    if (document.getElementById('tri').value == '1'){
-        var id = PrixCroissant[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
-        document.location.href = lien;
+    if (URL === 'https://qalf.github.io/DandF/index.html') {
+        if (tri.value === 1){
+            var id = PrixCroissant[h].id;
+            var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+            document.location.href = lien;
+        }
+
+        else if (tri.value === 2){
+            var id = PrixDécroissant[h].id;
+            var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+            document.location.href = lien;
+    
+        }
+
+        else if (tri.value === 3){
+            var chemin = LstContinent[h].NomChemin;
+            var lien = 'https://qalf.github.io/DandF/'+chemin;
+            document.location.href = lien;
+    
+        }
 
     }
 
-    if (document.getElementById('tri').value == '2'){
-        var id = PrixDécroissant[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
-        document.location.href = lien;
-
-    }
 
     //else if (URL === 'https://qalf.github.io/DandF/html/Europe.html' || 'https://qalf.github.io/DandF/html/Asie.html' || 'https://qalf.github.io/DandF/html/AmeriqueN.html' || 'https://qalf.github.io/DandF/html/AmeriqueS.html' || 'https://qalf.github.io/DandF/html/Afrique.html' || 'https://qalf.github.io/DandF/html/IlesP.html') {
     //    var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
