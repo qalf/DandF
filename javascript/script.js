@@ -3,6 +3,7 @@ let image = document.getElementsByClassName("image");
 let overlay = document.getElementsByClassName("overlay");
 let URL = window.location.href;
 let body = document.getElementById("body");
+var tri = document.getElementById('tri');
 
 class continent {
     constructor(id, link, NomChemin, name) {
@@ -54,7 +55,7 @@ let Montreal = new ville(14,3,16,14, 'images/AmériqueN/Montreal.jpg', 'Montreal
 let NewYork = new ville(15,4,22,8, 'images/AmériqueN/NewYork.jpeg', 'New York', 'AmeriqueN', 700);
 
 let BuenosAires = new ville(16,0,12,18, 'images/AmériqueS/BuenosAires.jpg', 'Buenos Aires', 'AmeriqueS', 470);
-let LacTiticaca = new ville(17,1,1,29, 'images/AmériqueS/LacTiticaca.jpg', 'Puno', 'AmeriqueS', 300);
+let LacTiticaca = new ville(17,1,1,29, 'images/AmériqueS/LacTiticaca.jpg', 'Lac Titicaca', 'AmeriqueS', 300);
 let Lima = new ville(18,2,3,27, 'images/AmériqueS/Lima.jpg', 'Lima', 'AmeriqueS', 350);
 let Rio = new ville(19,3,2,28, 'images/AmériqueS/Rio.jpeg', 'Rio de Janeiro', 'AmeriqueS', 320);
 
@@ -65,7 +66,7 @@ let LeCaire = new ville(23,3,14,16, 'images/Afrique/LeCaire.jpg', 'Le Caire', 'A
 let Marrakesh = new ville(24,4,9,21, 'images/Afrique/Marrakesh.jpg', 'Marrakesh', 'Afrique', 430);
 
 let Auckland = new ville(25,0,24,6, 'images/IlesP/Auckland.jpg', 'Auckland', 'IlesP', 820);
-let Caraibes = new ville(26,1,29,1, 'images/IlesP/Caraibes.jpg', 'Bridgetown', 'IlesP', 920);
+let Caraibes = new ville(26,1,29,1, 'images/IlesP/Caraibes.jpg', 'Caraïbes', 'IlesP', 920);
 let Hawai = new ville(27,2,25,5, 'images/IlesP/Hawai.jpg', 'Hawaï', 'IlesP', 850);
 let Seychelles = new ville(28,3,26,4, 'images/IlesP/Seychelles.jpg', 'Seychelles', 'IlesP', 870);
 let Singapour = new ville(29,4,30,0, 'images/IlesP/Singapour.jpg', 'Singapour', 'IlesP', 950);
@@ -91,7 +92,6 @@ afficheimg();
 function afficheimg() {
     let link = ''
     affichage.innerHTML = '';
-    var tri = document.getElementById('tri');
 
     if (tri.value == '1'){
         for (var i of LstContinent) {
