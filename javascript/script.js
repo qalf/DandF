@@ -6,6 +6,7 @@ let body = document.getElementById("body");
 var tri = document.getElementById('tri');
 let barre = document.getElementById('barre');
 let loupe = document.getElementById('loupe');
+var prixmax = document.getElementById('prixmax');
 
 
 class continent {
@@ -133,60 +134,68 @@ function afficheimg() {
 
     else if (tri.value == '2') {
         for (var i of PrixCroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
-
+            if (i.prix < prixmax.value){
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            }
         }
         affichage.innerHTML += link;
     }
 
     else if (tri.value == '3') {
         for (var i of PrixDécroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
-
+            if (i.prix < prixmax.value){
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            }
         }
         affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
-
+            if (i.prix < prixmax.value){
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            }
         }
         affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Asie.html'){
         for (var i of LstAsie) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
-
+            if (i.prix < prixmax.value){
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            }
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueN.html'){
         for (var i of LstAmeriqueN) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
-
+            if (i.prix < prixmax.value){
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            }
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueS.html'){
         for (var i of LstAmeriqueS) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
-
+            if (i.prix < prixmax.value){
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            }
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/Afrique.html'){
         for (var i of LstAfrique) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
-
+            if (i.prix < prixmax.value){
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            }
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
         for (var i of LstIlesP) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
-
+            if (i.prix < prixmax.value){
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            }
         }
         affichage.innerHTML += link;
     }
