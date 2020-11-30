@@ -414,23 +414,21 @@ function delimg(i) {
 function resa(h) {
 
     if (tri.value == '1'){
+        var chemin = LstContinent[h].NomChemin;
+        var lien = 'https://qalf.github.io/DandF/'+chemin;
+        document.location.href = lien;
+    
+    }
+    if (tri.value == '2'){
         var id = PrixCroissant[h].id;
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
         document.location.href = lien;
     }
 
-    else if (tri.value == '2'){
+    else if (tri.value == '3'){
         var id = PrixDécroissant[h].id;
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
         document.location.href = lien;
-    
-    }
-
-    else if (tri.value == '3'){
-        var chemin = LstContinent[h].NomChemin;
-        var lien = 'https://qalf.github.io/DandF/'+chemin;
-        document.location.href = lien;
-    
     }
 
     else if (tri.value == '4'){
