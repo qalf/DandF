@@ -320,18 +320,21 @@ afficheimg();
 
 function afficheimg() {
     let link = ''
-    if (document.getElementById('tri') & document.getElementById('tri').value == '1') {
-        for (var i of PrixCroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+    if (document.getElementById('tri') !== null) {
+        if (document.getElementById('tri').value == '1') {
+            for (var i of PrixCroissant) {
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+            }
+            affichage.innerHTML += link;
         }
-        affichage.innerHTML += link;
     }
-
-    else if (document.getElementById('tri') & document.getElementById('tri').value == '2') {
-        for (var i of PrixDécroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+    else if (document.getElementById('tri') !== null){
+        if (document.getElementById('tri').value == '2') {
+            for (var i of PrixDécroissant) {
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+            }
+            affichage.innerHTML += link;
         }
-        affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
