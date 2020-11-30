@@ -87,6 +87,7 @@ CalculPrixBase();
 function CalculPrixBase() {
   let PrixBase = LstVille[sejour_id].prix;
   console.log(PrixBase);
+  return PrixBase
 }
 
 function dureeSejour() {
