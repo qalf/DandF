@@ -319,6 +319,7 @@ if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
 
 afficheimg();
 console.log(document.getElementById('tri').value);
+let tri = document.getElementById('tri');
 
 function afficheimg() {
     let link = ''
