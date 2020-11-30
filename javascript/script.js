@@ -430,10 +430,10 @@ function resa(h) {
 
     }
 
-    else if (URL === 'https://qalf.github.io/DandF/html/Europe.html' || 'https://qalf.github.io/DandF/html/Asie.html' || 'https://qalf.github.io/DandF/html/AmeriqueN.html' || 'https://qalf.github.io/DandF/html/AmeriqueS.html' || 'https://qalf.github.io/DandF/html/Afrique.html' || 'https://qalf.github.io/DandF/html/IlesP.html') {
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
-        document.location.href = lien;
-    }
+    //else if (URL === 'https://qalf.github.io/DandF/html/Europe.html' || 'https://qalf.github.io/DandF/html/Asie.html' || 'https://qalf.github.io/DandF/html/AmeriqueN.html' || 'https://qalf.github.io/DandF/html/AmeriqueS.html' || 'https://qalf.github.io/DandF/html/Afrique.html' || 'https://qalf.github.io/DandF/html/IlesP.html') {
+    //    var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
+    //    document.location.href = lien;
+    //}
 
     else {
         var chemin = LstContinent[i].NomChemin;
