@@ -320,8 +320,10 @@ if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
 afficheimg();
 function afficheimg() {
     let link = ''
+    if (document.getElementById('tri') === undefined){
+        var tri = '4';
+    }
     var tri = document.getElementById('tri');
-    console.log(tri.value == '1');
 
     if (tri.value == '1'){
         for (var i of LstContinent) {
