@@ -46,8 +46,34 @@ h1{
 
 }
 
-.test{
+#barre-recherche{
     width: 25%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+
+#barre{
+    width: 70%;
+    height: 50%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    margin-left: 10%;
+    border:2px solid white;
+    font-family: sans-serif;
+    font-size: 110%;
+    color:  white;
+    padding-left: 20px;
+    background-color:  #1b1b1f;
+
+}
+
+#loupe{
+    width: 50px;
+    margin-bottom: 5%;
+    padding-left: 1%;
+
 }
 
 nav{
@@ -237,6 +263,7 @@ form{
     border-radius: 1em;
 }
 
+/*
 input, textarea{
     font: 1em sans-serif;
     width: 300px;
@@ -247,6 +274,7 @@ input, textarea{
 input:focus, textarea:focus{
     border-color: #000;
 }
+*/
 
 textarea{
     vertical-align: top;
