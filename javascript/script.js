@@ -92,6 +92,7 @@ for (var i of LstVille){
     .then(data => {
         var temp = data.main.temp;
         i.temp = temp;
+        overlay[i].innerHTML = temp;
     })
 }
 
