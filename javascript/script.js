@@ -4,6 +4,8 @@ let overlay = document.getElementsByClassName("overlay");
 let URL = window.location.href;
 let body = document.getElementById("body");
 var tri = document.getElementById('tri');
+let barre = document.getElementById('barre');
+
 
 class continent {
     constructor(id, link, NomChemin, name) {
@@ -86,6 +88,16 @@ let LstAfrique = [CapeTown,Casablanca,Dubai,LeCaire,Marrakesh];
 let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
+
+function search(){
+    for (var i of LstVille){
+        if (barre.value == i.name){
+             tri.value = '4';
+            return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+        }
+    }
+    alert("La destination n'est pas encore dans notre catalogue");
+}
 
 
 afficheimg();
