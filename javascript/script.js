@@ -4,7 +4,6 @@ let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
 
-
 class continent {
     constructor(id, link, NomChemin, name) {
         this.id = id;
@@ -317,32 +316,32 @@ if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
     })
 }
 
-afficheimg();
-console.log(document.getElementById('tri').value);
-let tri = document.getElementById('tri');
 
+afficheimg();
 function afficheimg() {
     let link = ''
-    if (URL === 'https://qalf.github.io/DandF/index.html') {
-        if (tri.value === 1) {
-            for (var i of PrixCroissant) {
-                link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
-            }
-            affichage.innerHTML += link;
-        }
+    var tri = document.getElementById('tri');
+    console.log(tri.value == '1');
 
-        else if (tri.value === 2) {
-            for (var i of PrixDécroissant) {
-                link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
-            }
-            affichage.innerHTML += link;
+    if (tri.value == '1'){
+        for (var i of LstContinent) {
+            link += '<div class ="image" onmouseover="infosimg('+ i.id +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
-        else if (tri.value === 3){
-            for (var i of LstContinent) {
-                link += '<div class ="image" onmouseover="infosimg('+ i.id +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
-            }
-            affichage.innerHTML += link;
+        affichage.innerHTML += link;
+    }
+
+    else if (tri.value == '2') {
+        for (var i of PrixCroissant) {
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
         }
+        affichage.innerHTML += link;
+    }
+
+    else if (tri.value == '3') {
+        for (var i of PrixDécroissant) {
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+        }
+           affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
@@ -379,13 +378,6 @@ function afficheimg() {
     else if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
         for (var i of LstIlesP) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
-        }
-        affichage.innerHTML += link;
-    }
-
-    else {
-        for (var i of LstContinent) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
         affichage.innerHTML += link;
     }
