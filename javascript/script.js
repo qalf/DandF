@@ -3,9 +3,9 @@ let image = document.getElementsByClassName("image");
 let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
-if (URL === 'https://qalf.github.io/DandF/index.html'){
-    let tri = document.getElementById('tri');
-}
+
+let tri = document.getElementById('tri');
+
 
 class continent {
     constructor(id, link, NomChemin, name) {
