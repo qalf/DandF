@@ -70,9 +70,9 @@ let Seychelles = new ville(28,3,26,4, 'images/IlesP/Seychelles.jpg', 'Seychelles
 let Singapour = new ville(29,4,30,0, 'images/IlesP/Singapour.jpg', 'Singapour', 'IlesP', 950);
 let Ubud = new ville(30,5,27,3, 'images/IlesP/Ubud.jpg', 'Ubud', 'IlesP', 880);
 
-let PrixCroissant =[Stockholm, LacTiticaca, Rio, Lima, CapeTown, Rome];
+let PrixCroissant =[Stockholm, LacTiticaca, Rio, Lima, CapeTown, Rome, Barcelone, Londres, Paris, Marrakesh, Casablanca, Cancun, BuenosAires, Hanoï, LeCaire, Bangkok, Montreal, Pékin, Bombay, HongKong, Tokyo, LosAngeles, NewYork, Miami, Auckland, Hawai, Seychelles, Ubud, Dubai, Caraibes, Singapour];
 
-let PrixDécroissant =[Singapour, Caraibes, Dubai, Ubud, Seychelles, Hawai];
+let PrixDécroissant =[Singapour, Caraibes, Dubai, Ubud, Seychelles, Hawai, Auckland, Miami, NewYork, LosAngeles, Tokyo, HongKong, Bombay, Pékin, Montreal, Bangkok, LeCaire, Hanoï, BuenosAires, Cancun, Casablanca, Marrakesh, Paris, Londres, Barcelone, Rome, CapeTown, Lima, Rio, LacTiticaca, Stockholm,];
 
 let LstContinent = [Europe,Asie,AmeriqueN,AmeriqueS,Afrique,IlesP];
 
@@ -331,21 +331,21 @@ function afficheimg() {
 
     else if (tri.value == '2') {
         for (var i of PrixCroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
         }
         affichage.innerHTML += link;
     }
 
     else if (tri.value == '3') {
         for (var i of PrixDécroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
         }
            affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay"></div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
         }
         affichage.innerHTML += link;
     }
