@@ -320,14 +320,14 @@ afficheimg();
 
 function afficheimg() {
     let link = ''
-    if (document.getElementById('tri').value == '1') {
+    if (document.getElementById('tri') & document.getElementById('tri').value == '1') {
         for (var i of PrixCroissant) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
         }
         affichage.innerHTML += link;
     }
 
-    else if (document.getElementById('tri').value == '2') {
+    else if (document.getElementById('tri') & document.getElementById('tri').value == '2') {
         for (var i of PrixDécroissant) {
             link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
         }
@@ -436,7 +436,7 @@ function resa(h) {
     //}
 
     else {
-        var chemin = LstContinent[i].NomChemin;
+        var chemin = LstContinent[h].NomChemin;
         var lien = 'https://qalf.github.io/DandF/'+chemin;
         document.location.href = lien;
     }
