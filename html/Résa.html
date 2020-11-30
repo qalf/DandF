@@ -21,7 +21,7 @@
             </nav>
             <div class="test"></div>
         </header>
-        <form onchange="prixTotal()" onchange="CalculPrixBase()">
+        <form onchange="prixTotal()">
             <div class="informations">
                 <h3>Vos informations</h3>
                     <label>Nom :</label>
@@ -33,7 +33,7 @@
                     <label>Téléphone :</label>
                     <input type="tel" placeholder="0618957403">
             </div>
-            <div class="renseignement">
+            <div class="renseignement" onchange="CalculPrixBase()">
                 <h3>Votre voyage</h3>
                     <label>Date de départ :</label>
                     <input type="date" id="date_depart" name="start" onchange="DateVerif()" required>
