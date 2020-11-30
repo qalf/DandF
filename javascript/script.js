@@ -4,8 +4,6 @@ let overlay = document.getElementsByClassName("overlay");
 let URL = document.location.href;
 let body = document.getElementById("body");
 
-let tri = document.getElementById('tri');
-
 
 class continent {
     constructor(id, link, NomChemin, name) {
@@ -73,9 +71,9 @@ let Seychelles = new ville(28,3,26,4, 'images/IlesP/Seychelles.jpg', 'Seychelles
 let Singapour = new ville(29,4,30,0, 'images/IlesP/Singapour.jpg', 'Singapour', 'IlesP', 950);
 let Ubud = new ville(30,5,27,3, 'images/IlesP/Ubud.jpg', 'Ubud', 'IlesP', 880);
 
-let PrixCroissant =[Stockholm, LacTiticaca, Rio, Lima, CapeTown, Rome, Barcelone, Londres, Paris, Marrakesh, Casablanca, Cancun, BuenosAires, Hanoï, LeCaire, Bangkok, Montreal, Pékin, Bombay, HongKong, Tokyo, LosAngeles, NewYork, Miami, Auckland, Hawai, Seychelles, Ubud, Dubai, Caraibes, Singapour];
+let PrixCroissant =[Stockholm, LacTiticaca, Rio, Lima, CapeTown, Rome];
 
-let PrixDécroissant =[Singapour, Caraibes, Dubai, Ubud, Seychelles, Hawai, Auckland, Miami, NewYork, LosAngeles, Tokyo, HongKong, Bombay, Pékin, Montreal, Bangkok, LeCaire, Hanoï, BuenosAires, Cancun, Casablanca, Marrakesh, Paris, Londres, Barcelone, Rome, CapeTown, Lima, Rio, LacTiticaca, Stockholm,];
+let PrixDécroissant =[Singapour, Caraibes, Dubai, Ubud, Seychelles, Hawai];
 
 let LstContinent = [Europe,Asie,AmeriqueN,AmeriqueS,Afrique,IlesP];
 
@@ -320,6 +318,8 @@ if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
 }
 
 afficheimg();
+console.log(document.getElementById('tri').value);
+let tri = document.getElementById('tri');
 
 function afficheimg() {
     let link = ''
