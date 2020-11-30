@@ -82,8 +82,6 @@ let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,Hon
 
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
-
-CalculPrixBase();
 function CalculPrixBase() {
   var PrixBase = LstVille[sejour_id].prix;
   console.log(PrixBase);
