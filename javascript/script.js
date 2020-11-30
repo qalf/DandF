@@ -106,7 +106,9 @@ barre.addEventListener('keyup',function(event){
     }
 })
 
-if (URL === 'https://qalf.github.io/DandF/index.html' || 'https://qalf.github.io/DandF/' || 'https://qalf.github.io/DandF/index.html#'){
+if (URL == 'https://qalf.github.io/DandF/index.html'){
+    console.log(URL);
+    console.log(true);
     afficheimg();
 }
 
