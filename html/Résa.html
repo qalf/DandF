@@ -22,50 +22,52 @@
             <div class="test"></div>
         </header>
         <form onchange="prixTotal()">
-            <div class="informations">
-                <h3>Vos informations</h3>
-                    <label>Nom :</label>
-                    <input type="text" placeholder="Dupond">
-                    <label>Prénom :</label>
-                    <input type="text" placeholder="Jean">
-                    <label>Adresse e-mail :</label>
-                    <input type="text" placeholder="Jean.Dupond@voyage.fr">
-                    <label>Téléphone :</label>
-                    <input type="tel" placeholder="0618957403">
-            </div>
-            <div class="renseignement" onchange="CalculPrixBase()">
-                <h3>Votre voyage</h3>
-                    <label>Date de départ :</label>
-                    <input type="date" id="date_depart" name="start" onchange="DateVerif()" required>
-                    <label>Date de retour :</label>
-                    <input type="date" id="date_retour" name="return" onchange="DateVerif()" required>
-                    <label>Petit-déjeuner ? (15€/personne):</label>
-                    <input type="checkbox" id="dej_checkbox" name="dej_checkbox" value="1" aria-checked="false">
-            </div>
-            <div class="supplement">
-                <h3>Nombre de voyageurs</h3>
-                    <label>Nombre d'adultes :</label>
-                    <select name="nb_adultes" id="nb_adultes">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <label>Enfants (-12 ans):</label>
-                    <select name="nb_enfants" id="nb_enfants">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                <label>Besoin d'un renseignement ?:</label>
-                <textarea placeholder="Quel renseignement souhaitez-vous ?" id="story" name="story" rows="5" cols="33"></textarea>
-                <label>Prix du voyage :<span class="prix_voyage"></span></label>
-                <label>Soumettre la demande :</label>
-                <input type="submit" formaction="../html/Panier.html" value="Envoyer le formulaire">
-                <label>Remise à zéro :</label>
-                <input type="submit" value="Remise à zéro de la commande">
+            <div  onchange="CalculPrixBase()">
+                <div class="informations">
+                    <h3>Vos informations</h3>
+                        <label>Nom :</label>
+                        <input type="text" placeholder="Dupond">
+                        <label>Prénom :</label>
+                        <input type="text" placeholder="Jean">
+                        <label>Adresse e-mail :</label>
+                        <input type="text" placeholder="Jean.Dupond@voyage.fr">
+                        <label>Téléphone :</label>
+                        <input type="tel" placeholder="0618957403">
+                </div>
+                <div class="renseignement">
+                    <h3>Votre voyage</h3>
+                        <label>Date de départ :</label>
+                        <input type="date" id="date_depart" name="start" onchange="DateVerif()" required>
+                        <label>Date de retour :</label>
+                        <input type="date" id="date_retour" name="return" onchange="DateVerif()" required>
+                        <label>Petit-déjeuner ? (15€/personne):</label>
+                        <input type="checkbox" id="dej_checkbox" name="dej_checkbox" value="1" aria-checked="false">
+                </div>
+                <div class="supplement">
+                    <h3>Nombre de voyageurs</h3>
+                        <label>Nombre d'adultes :</label>
+                        <select name="nb_adultes" id="nb_adultes">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <label>Enfants (-12 ans):</label>
+                        <select name="nb_enfants" id="nb_enfants">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    <label>Besoin d'un renseignement ?:</label>
+                    <textarea placeholder="Quel renseignement souhaitez-vous ?" id="story" name="story" rows="5" cols="33"></textarea>
+                    <label>Prix du voyage :<span class="prix_voyage"></span></label>
+                    <label>Soumettre la demande :</label>
+                    <input type="submit" formaction="../html/Panier.html" value="Envoyer le formulaire">
+                    <label>Remise à zéro :</label>
+                    <input type="submit" value="Remise à zéro de la commande">
+                </div>
             </div>
         </form>
 
