@@ -85,7 +85,7 @@ let sejour_id = new URLSearchParams(window.location.search).get("id");
 
 CalculPrixBase();
 function CalculPrixBase() {
-  let PrixBase = LstVille[sejour_id].prix;
+  var PrixBase = LstVille[sejour_id].prix;
   console.log(PrixBase);
   return PrixBase
 }
