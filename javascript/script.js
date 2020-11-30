@@ -106,13 +106,10 @@ barre.addEventListener('keyup',function(event){
     }
 })
 
-if (URL == 'https://qalf.github.io/DandF/index.html'){
-    console.log(URL);
-    console.log(true);
-    afficheimg();
-}
 
-    function afficheimg() {
+afficheimg();
+
+function afficheimg() {
     let link = ''
     affichage.innerHTML = '';
 
@@ -213,7 +210,6 @@ function delimg(i) {
 }
 
 function resa(h) {
-
     if (tri.value == '1'){
         var chemin = LstContinent[h].NomChemin;
         var lien = 'https://qalf.github.io/DandF/'+chemin;
