@@ -115,12 +115,12 @@ function DateVerif() {
 }
   
   function prixEnfants(){
-    var prixEnfants = 0.4*CalculPrixBase()*dureeSejour()*document.getElementById("nb_enfants").value;
+    var prixEnfants = 0.4*PrixBase*dureeSejour()*document.getElementById("nb_enfants").value;
     return prixEnfants
   }
   
   function prixAdultes() {
-    var prixAdultes = dureeSejour()*CalculPrixBase()*document.getElementById("nb_adultes").value;
+    var prixAdultes = dureeSejour()*PrixBase*document.getElementById("nb_adultes").value;
     return prixAdultes
   }
   
