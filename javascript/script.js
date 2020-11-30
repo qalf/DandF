@@ -91,8 +91,7 @@ for (var i of LstVille){
     .then(res => res.json())
     .then(data => {
         var temp = data.main.temp;
-        i.temp = temp;
-        overlay[i].innerHTML = temp;
+        overlay[i].innerHTML = i.name +'<br>'+ i.temp;
     })
 }
 
@@ -110,52 +109,100 @@ function afficheimg() {
 
     else if (tri.value == '2') {
         for (var i of PrixCroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+i.temp+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+            .then(res => res.json())
+            .then(data => {
+                var temp = data.main.temp;
+                overlay[i].innerHTML = i.name +'<br>'+ temp;
+            })
         }
         affichage.innerHTML += link;
     }
 
     else if (tri.value == '3') {
         for (var i of PrixDécroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+i.temp+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+            .then(res => res.json())
+            .then(data => {
+                var temp = data.main.temp;
+                overlay[i].innerHTML = i.name +'<br>'+ temp;
+            })
         }
            affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+i.temp+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+            .then(res => res.json())
+            .then(data => {
+                var temp = data.main.temp;
+                overlay[i].innerHTML = i.name +'<br>'+ temp;
+            })
         }
         affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Asie.html'){
         for (var i of LstAsie) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+            .then(res => res.json())
+            .then(data => {
+                var temp = data.main.temp;
+                overlay[i].innerHTML = i.name +'<br>'+ temp;
+            })
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueN.html'){
         for (var i of LstAmeriqueN) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+            .then(res => res.json())
+            .then(data => {
+                var temp = data.main.temp;
+                overlay[i].innerHTML = i.name +'<br>'+ temp;
+            })
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueS.html'){
         for (var i of LstAmeriqueS) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+            .then(res => res.json())
+            .then(data => {
+                var temp = data.main.temp;
+                overlay[i].innerHTML = i.name +'<br>'+ temp;
+            })
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/Afrique.html'){
         for (var i of LstAfrique) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+            .then(res => res.json())
+            .then(data => {
+                var temp = data.main.temp;
+                overlay[i].innerHTML = i.name +'<br>'+ temp;
+            })
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
         for (var i of LstIlesP) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+            .then(res => res.json())
+            .then(data => {
+                var temp = data.main.temp;
+                overlay[i].innerHTML = i.name +'<br>'+ temp;
+            })
         }
         affichage.innerHTML += link;
     }
