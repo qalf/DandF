@@ -5,6 +5,7 @@ let URL = window.location.href;
 let body = document.getElementById("body");
 var tri = document.getElementById('tri');
 let barre = document.getElementById('barre');
+let loupe = document.getElementById('loupe');
 
 
 class continent {
@@ -98,6 +99,12 @@ function search(){
     }
     alert("La destination n'est pas encore dans notre catalogue");
 }
+
+barre.addEventListener('keyup',function(event){
+    if (event.keyCode === 13) {
+        loupe.click();
+    }
+})
 
 
 afficheimg();
