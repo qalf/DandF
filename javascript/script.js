@@ -1,7 +1,7 @@
 let affichage = document.getElementById("affichage");
 let image = document.getElementsByClassName("image");
 let overlay = document.getElementsByClassName("overlay");
-let URL = document.location.href;
+let URL = window.location.href;
 let body = document.getElementById("body");
 
 class continent {
@@ -43,7 +43,7 @@ let Stockholm = new ville(4,4,0,30, 'images/Europe/Stockholm.jpg', 'Stockholm', 
 let Bangkok = new ville(5,0,15,15, 'images/Asie/Bangkok.jpg', 'Bangkok', 'Asie', 500);
 let Bombay = new ville(6,1,18,12, 'images/Asie/Bombay.jpg', 'Bombay', 'Asie', 550);
 let Hanoï = new ville(7,2,13,17, 'images/Asie/Hanoï.jpg', 'Hanoï', 'Asie', 475);
-let HongKong = new ville(8,3,19,11, 'images/Asie/HongKong.jpg', 'Hong-Kong', 'Asie', 570);
+let HongKong = new ville(8,3,19,11, 'images/Asie/HongKong.jpg', 'Hong Kong', 'Asie', 570);
 let Pékin = new ville(9,4,17,13, 'images/Asie/Pékin.jpg', 'Pékin', 'Asie', 530);
 let Tokyo = new ville(10,5,20,10, 'images/Asie/Tokyo.jpg', 'Tokyo', 'Asie', 600);
 
@@ -53,8 +53,8 @@ let Miami = new ville(13,2,23,7, 'images/AmériqueN/Miami.jpg', 'Miami', 'Ameriq
 let Montreal = new ville(14,3,16,14, 'images/AmériqueN/Montreal.jpg', 'Montreal', 'AmeriqueN', 500);
 let NewYork = new ville(15,4,22,8, 'images/AmériqueN/NewYork.jpeg', 'New York', 'AmeriqueN', 700);
 
-let BuenosAires = new ville(16,0,12,18, 'images/AmériqueS/BuenosAires.jpg', 'Buenos-Aires', 'AmeriqueS', 470);
-let LacTiticaca = new ville(17,1,1,29, 'images/AmériqueS/LacTiticaca.jpg', 'Lac Titicaca', 'AmeriqueS', 300);
+let BuenosAires = new ville(16,0,12,18, 'images/AmériqueS/BuenosAires.jpg', 'Buenos Aires', 'AmeriqueS', 470);
+let LacTiticaca = new ville(17,1,1,29, 'images/AmériqueS/LacTiticaca.jpg', 'Puno', 'AmeriqueS', 300);
 let Lima = new ville(18,2,3,27, 'images/AmériqueS/Lima.jpg', 'Lima', 'AmeriqueS', 350);
 let Rio = new ville(19,3,2,28, 'images/AmériqueS/Rio.jpeg', 'Rio de Janeiro', 'AmeriqueS', 320);
 
@@ -65,7 +65,7 @@ let LeCaire = new ville(23,3,14,16, 'images/Afrique/LeCaire.jpg', 'Le Caire', 'A
 let Marrakesh = new ville(24,4,9,21, 'images/Afrique/Marrakesh.jpg', 'Marrakesh', 'Afrique', 430);
 
 let Auckland = new ville(25,0,24,6, 'images/IlesP/Auckland.jpg', 'Auckland', 'IlesP', 820);
-let Caraibes = new ville(26,1,29,1, 'images/IlesP/Caraibes.jpg', 'Caraïbes', 'IlesP', 920);
+let Caraibes = new ville(26,1,29,1, 'images/IlesP/Caraibes.jpg', 'Bridgetown', 'IlesP', 920);
 let Hawai = new ville(27,2,25,5, 'images/IlesP/Hawai.jpg', 'Hawaï', 'IlesP', 850);
 let Seychelles = new ville(28,3,26,4, 'images/IlesP/Seychelles.jpg', 'Seychelles', 'IlesP', 870);
 let Singapour = new ville(29,4,30,0, 'images/IlesP/Singapour.jpg', 'Singapour', 'IlesP', 950);
@@ -101,12 +101,13 @@ function afficheimg() {
 
     else if (tri.value == '2') {
         for (var i of PrixCroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay"></div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
             fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
             .then(res => res.json())
             .then(data => {
                 var temp = data.main.temp;
-                overlay[i].innerHTML = i.name +'<br>'+ temp;
+                overlay[i.id_croissant].innerHTML = '<br>'+ temp;
+                console.log(overlay[i.id_croissant].innerHTML);
             })
         }
         affichage.innerHTML += link;
@@ -119,7 +120,7 @@ function afficheimg() {
             .then(res => res.json())
             .then(data => {
                 var temp = data.main.temp;
-                overlay[i].innerHTML = i.name +'<br>'+ temp;
+                overlay[i.id_décroissant].innerHTML = i.name +'<br>'+ temp;
             })
         }
            affichage.innerHTML += link;
@@ -132,7 +133,7 @@ function afficheimg() {
             .then(res => res.json())
             .then(data => {
                 var temp = data.main.temp;
-                overlay[i].innerHTML = i.name +'<br>'+ temp;
+                overlay[i.id_continent].innerHTML = i.name +'<br>'+ temp;
             })
         }
         affichage.innerHTML += link;
@@ -145,7 +146,7 @@ function afficheimg() {
             .then(res => res.json())
             .then(data => {
                 var temp = data.main.temp;
-                overlay[i].innerHTML = i.name +'<br>'+ temp;
+                overlay[i.id_continent].innerHTML = i.name +'<br>'+ temp;
             })
         }
         affichage.innerHTML += link;
@@ -157,7 +158,7 @@ function afficheimg() {
             .then(res => res.json())
             .then(data => {
                 var temp = data.main.temp;
-                overlay[i].innerHTML = i.name +'<br>'+ temp;
+                overlay[i.id_continent].innerHTML = i.name +'<br>'+ temp;
             })
         }
         affichage.innerHTML += link;
@@ -169,7 +170,7 @@ function afficheimg() {
             .then(res => res.json())
             .then(data => {
                 var temp = data.main.temp;
-                overlay[i].innerHTML = i.name +'<br>'+ temp;
+                overlay[i.id_continent].innerHTML = i.name +'<br>'+ temp;
             })
         }
         affichage.innerHTML += link;
@@ -181,7 +182,7 @@ function afficheimg() {
             .then(res => res.json())
             .then(data => {
                 var temp = data.main.temp;
-                overlay[i].innerHTML = i.name +'<br>'+ temp;
+                overlay[i.id_continent].innerHTML = i.name +'<br>'+ temp;
             })
         }
         affichage.innerHTML += link;
@@ -193,7 +194,7 @@ function afficheimg() {
             .then(res => res.json())
             .then(data => {
                 var temp = data.main.temp;
-                overlay[i].innerHTML = i.name +'<br>'+ temp;
+                overlay[i.id_continent].innerHTML = i.name +'<br>'+ temp;
             })
         }
         affichage.innerHTML += link;
@@ -234,23 +235,23 @@ function resa(h) {
     if (tri.value == '1'){
         var chemin = LstContinent[h].NomChemin;
         var lien = 'https://qalf.github.io/DandF/'+chemin;
-        document.location.href = lien;
+        window.location.assign(lien);
     
     }
     if (tri.value == '2'){
         var id = PrixCroissant[h].id;
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
-        document.location.href = lien;
+        window.location.assign(lien);
     }
 
     else if (tri.value == '3'){
         var id = PrixDécroissant[h].id;
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
-        document.location.href = lien;
+        window.location.assign(lien);
     }
 
     else if (tri.value == '4'){
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
-        document.location.href = lien;
+        window.location.assign(lien);
     }
 }
