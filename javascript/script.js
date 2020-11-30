@@ -320,9 +320,6 @@ if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
 afficheimg();
 function afficheimg() {
     let link = ''
-    if (document.getElementById('tri') === undefined){
-        var tri = '4';
-    }
     var tri = document.getElementById('tri');
 
     if (tri.value == '1'){
@@ -415,38 +412,27 @@ function delimg(i) {
 }
 
 function resa(h) {
-    if (URL === 'https://qalf.github.io/DandF/index.html') {
-        if (tri.value === 1){
-            var id = PrixCroissant[h].id;
-            var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
-            document.location.href = lien;
-        }
 
-        else if (tri.value === 2){
-            var id = PrixDécroissant[h].id;
-            var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
-            document.location.href = lien;
-    
-        }
-
-        else if (tri.value === 3){
-            var chemin = LstContinent[h].NomChemin;
-            var lien = 'https://qalf.github.io/DandF/'+chemin;
-            document.location.href = lien;
-    
-        }
-
-    }
-
-
-    //else if (URL === 'https://qalf.github.io/DandF/html/Europe.html' || 'https://qalf.github.io/DandF/html/Asie.html' || 'https://qalf.github.io/DandF/html/AmeriqueN.html' || 'https://qalf.github.io/DandF/html/AmeriqueS.html' || 'https://qalf.github.io/DandF/html/Afrique.html' || 'https://qalf.github.io/DandF/html/IlesP.html') {
-    //    var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
-    //    document.location.href = lien;
-    //}
-
-    else {
+    if (tri.value == '1'){
         var chemin = LstContinent[h].NomChemin;
         var lien = 'https://qalf.github.io/DandF/'+chemin;
+        document.location.href = lien;
+    
+    }
+    if (tri.value == '2'){
+        var id = PrixCroissant[h].id;
+        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        document.location.href = lien;
+    }
+
+    else if (tri.value == '3'){
+        var id = PrixDécroissant[h].id;
+        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        document.location.href = lien;
+    }
+
+    else if (tri.value == '4'){
+        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
         document.location.href = lien;
     }
 }
