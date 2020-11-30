@@ -21,7 +21,7 @@ let Afrique = new continent(4, 'images/Continent/Afrique.jpeg', 'html/Afrique.ht
 let IlesP = new continent(5, 'images/Continent/IlesP.jpeg', 'html/IlesP.html', 'Iles Paradisiaques');
 
 class ville{
-    constructor(id,id_continent,id_croissant,id_décroissant,link,name,continent,prix){
+    constructor(id,id_continent,id_croissant,id_décroissant,link,name,continent,prix,temp){
         this.id = id;
         this.id_continent = id_continent;
         this.id_croissant = id_croissant;
@@ -30,6 +30,7 @@ class ville{
         this.name = name;
         this.continent = continent
         this.prix = prix;
+        this.temp = temp
     }
 }
 
@@ -85,237 +86,14 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
-
-if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[0].innerHTML = Paris.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Barcelone&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[1].innerHTML = Barcelone.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Londres&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[2].innerHTML = Londres.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Rome&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[3].innerHTML = Rome.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[4].innerHTML = Stockholm.name +'<br>'+ Math.round(temp) +'°C';
+for (var i of LstVille){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+    .then(res => res.json())
+    .then(data => {
+        var temp = data.main.temp;
+        i.temp = temp;
     })
 }
-
-if (URL === 'https://qalf.github.io/DandF/html/Asie.html'){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Bangkok&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[0].innerHTML = Bangkok.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Bombay&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[1].innerHTML = Bombay.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Hanoï&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[2].innerHTML = Hanoï.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=HongKong&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[3].innerHTML = HongKong.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Pékin&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[4].innerHTML = Pékin.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Tokyo&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[5].innerHTML = Tokyo.name +'<br>'+ Math.round(temp) +'°C';
-    })
-}
-
-if (URL === 'https://qalf.github.io/DandF/html/AmeriqueN.html'){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Cancun&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[0].innerHTML = Cancun.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Los Angeles&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[1].innerHTML = LosAngeles.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Miami&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[2].innerHTML = Miami.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Montreal&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[3].innerHTML = Montreal.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=New York&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[4].innerHTML = NewYork.name +'<br>'+ Math.round(temp) +'°C';
-    })
-}
-
-if (URL === 'https://qalf.github.io/DandF/html/AmeriqueS.html'){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Buenos Aires&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[0].innerHTML = BuenosAires.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Puno&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[1].innerHTML = LacTiticaca.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Lima&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[2].innerHTML = Lima.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Rio de Janeiro&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[3].innerHTML = Rio.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-}
-
-if (URL === 'https://qalf.github.io/DandF/html/Afrique.html'){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Cape Town&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[0].innerHTML = CapeTown.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Casablanca&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[1].innerHTML = Casablanca.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Dubai&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[2].innerHTML = Dubai.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Le Caire&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[3].innerHTML = LeCaire.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Marrakesh&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[4].innerHTML = Marrakesh.name +'<br>'+ Math.round(temp) +'°C';
-    })
-}
-
-if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Auckland&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[0].innerHTML = Auckland.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Bridgetown&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[1].innerHTML = Caraibes.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Hawai&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[2].innerHTML = Hawai.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Seychelles&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[3].innerHTML = Seychelles.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Singapour&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[4].innerHTML = Singapour.name +'<br>'+ Math.round(temp) +'°C';
-    })
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Ubud&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-        .then(res => res.json())
-        .then(data => {
-            var temp = data.main.temp;
-            overlay[5].innerHTML = Ubud.name +'<br>'+ Math.round(temp) +'°C';
-    })
-}
-
 
 afficheimg();
 function afficheimg() {
@@ -331,52 +109,52 @@ function afficheimg() {
 
     else if (tri.value == '2') {
         for (var i of PrixCroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+i.temp+'</div></div>';
         }
         affichage.innerHTML += link;
     }
 
     else if (tri.value == '3') {
         for (var i of PrixDécroissant) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_décroissant +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+i.temp+'</div></div>';
         }
            affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Europe.html'){
         for (var i of LstEurope) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+i.temp+'</div></div>';
         }
         affichage.innerHTML += link;
     }
 
     else if (URL === 'https://qalf.github.io/DandF/html/Asie.html'){
         for (var i of LstAsie) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueN.html'){
         for (var i of LstAmeriqueN) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/AmeriqueS.html'){
         for (var i of LstAmeriqueS) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/Afrique.html'){
         for (var i of LstAfrique) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
         }
         affichage.innerHTML += link;
     }
     else if (URL === 'https://qalf.github.io/DandF/html/IlesP.html'){
         for (var i of LstIlesP) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            link += '<div class ="image" onmouseover="infosimg('+ i.id_continent +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+i.temp+'</div></div>';
         }
         affichage.innerHTML += link;
     }
