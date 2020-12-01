@@ -8,7 +8,6 @@ let barre = document.getElementById('barre');
 let loupe = document.getElementById('loupe');
 var prixmax = document.getElementById('prixmax');
 
-console.log(tri.value);
 
 class continent {
     constructor(id, link, NomChemin, name) {
@@ -111,6 +110,8 @@ barre.addEventListener('keyup',function(event){
 afficheimg();
 
 function afficheimg() {
+    console.log(tri.value);
+
     let link = ''
     affichage.innerHTML = '';
 
@@ -145,7 +146,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstEurope) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
                 c++;
             }
         }
@@ -156,7 +157,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstAsie) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
                 c++;
             }
         }
@@ -166,7 +167,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstAmeriqueN) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
                 c++;
             }
         }
@@ -176,7 +177,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstAmeriqueS) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
                 c++;
             }
         }
@@ -186,7 +187,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstAfrique) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
                 c++;
             }
         }
@@ -196,7 +197,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstIlesP) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
                 c++;
             }
         }
@@ -235,7 +236,7 @@ function resa(h) {
     if (tri.value == '1'){
         for (var i=0 ; i<6 ; i++){
             if (h === i){
-                tri.value = "'"+ i+4 +"'";
+                tri.value = i+4;
                 afficheimg();
             }
         }
