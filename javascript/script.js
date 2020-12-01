@@ -8,6 +8,7 @@ let barre = document.getElementById('barre');
 let loupe = document.getElementById('loupe');
 var prixmax = document.getElementById('prixmax');
 
+console.log(tri.value);
 
 class continent {
     constructor(id, link, NomChemin, name) {
