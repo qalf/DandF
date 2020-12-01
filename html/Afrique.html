@@ -26,11 +26,13 @@
             </div>
         </header>
         
-        <div id="filtre">
-            <select  id="tri" style="display:none;">
-                <option value="4"></option>
+        <div class="filtre">
+            <select  id="tri" onchange="afficheimg()">
+                <option value="1">Par Continents</option>
+                <option value="2">Prix Croissant</option>
+                <option value="3">Prix Décroissant</option>
             </select>
-            <select  id="prixmax" onchange="afficheimg() ; affichetemp()">
+            <select  id="prixmax" onchange="afficheimg()">
                 <option value="1000">1000€ / Personnes</option>
                 <option value="900">900€ / Personnes</option>
                 <option value="800">800€ / Personnes</option>

@@ -92,24 +92,12 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 function search(){
-    if (URL === 'https://qalf.github.io/DandF/html/Europe.html' || URL ==='https://qalf.github.io/DandF/html/Asie.html' || URL ==='https://qalf.github.io/DandF/html/AmeriqueN.html' || URL ==='https://qalf.github.io/DandF/html/AmeriqueS.html' || URL ==='https://qalf.github.io/DandF/html/Afrique.html' || URL ==='https://qalf.github.io/DandF/html/IlesP.html'){
-        for (var i of LstVille){
-            if (barre.value == i.name){
-                return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
-            }
+    for (var i of LstVille){
+        if (barre.value == i.name){
+            return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
         }
-        alert("La destination n'est pas encore dans notre catalogue");
     }
-
-    else {
-        for (var i of LstVille){
-            if (barre.value == i.name){
-                tri.value = '4';
-                return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
-            }
-        }
-        alert("La destination n'est pas encore dans notre catalogue");
-    }
+    alert("La destination n'est pas encore dans notre catalogue");
 }
 
 barre.addEventListener('keyup',function(event){
@@ -233,7 +221,7 @@ function infosimg(i,h) {
 function delimg(i) {
     image[i].style.width = "350px";
     image[i].style.height = "237px";
-    image[i].style.marginTop = "20px";
+    image[i].style.marginTop = "10px";
     image[i].style.marginBottom = "20px";
 
     
@@ -258,11 +246,6 @@ function resa(h) {
     else if (tri.value == '3'){
         var id = PrixDécroissant[h].id;
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
-        window.location.assign(lien);
-    }
-
-    else if (tri.value == '4'){
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
         window.location.assign(lien);
     }
 }

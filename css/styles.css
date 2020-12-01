@@ -139,7 +139,7 @@ nav{
 
 .filtre {
     padding: 0;
-    margin: 0;
+    margin: 1%;
     border: 1px solid #ccc;
     width: 10%;
     border-radius: 3px;
@@ -150,7 +150,7 @@ nav{
 }
 .filtre select {
     padding: 5px 8px;
-    width: 130%;
+    width: 100%;
     border: none;
     box-shadow: none;
     background-color: transparent;
@@ -181,6 +181,9 @@ nav{
 #container{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
 }
 
 #affichage {
@@ -197,7 +200,7 @@ nav{
     width: 350px;
     height: 237px;
     border-radius: 10px;
-    margin: 20px 20px 20px 20px;
+    margin: 10px 20px 20px 20px;
     background-size: cover;
     display: flex;
     align-items: flex-end;
