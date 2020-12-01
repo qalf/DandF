@@ -1,13 +1,10 @@
 let affichage = document.getElementById("affichage");
 let image = document.getElementsByClassName("image");
 let overlay = document.getElementsByClassName("overlay");
-let URL = window.location.href;
-let body = document.getElementById("body");
 var tri = document.getElementById('tri');
 let barre = document.getElementById('barre');
 let loupe = document.getElementById('loupe');
 var prixmax = document.getElementById('prixmax');
-
 
 class continent {
     constructor(id, link, name) {
@@ -23,6 +20,8 @@ let AmeriqueN = new continent(2, 'images/Continent/AmériqueN.jpg', 'Amérique D
 let AmeriqueS = new continent(3, 'images/Continent/AmériqueS.jpeg', 'Amérique du Sud');
 let Afrique = new continent(4, 'images/Continent/Afrique.jpeg', 'Afrique');
 let IlesP = new continent(5, 'images/Continent/IlesP.jpeg', 'Iles Paradisiaques');
+
+let LstContinent = [Europe,Asie,AmeriqueN,AmeriqueS,Afrique,IlesP];
 
 class ville{
     constructor(id,id_continent,id_croissant,id_décroissant,link,name,continent,prix,name_api,temp){
@@ -77,10 +76,7 @@ let Singapour = new ville(29,4,30,0, 'images/IlesP/Singapour.jpg', 'Singapour', 
 let Ubud = new ville(30,5,27,3, 'images/IlesP/Ubud.jpg', 'Ubud', 'IlesP', 880, 'Ubud');
 
 let PrixCroissant =[Stockholm, LacTiticaca, Rio, Lima, CapeTown, Rome, Barcelone, Londres, Paris, Marrakesh, Casablanca, Cancun, BuenosAires, Hanoï, LeCaire, Bangkok, Montreal, Pékin, Bombay, HongKong, Tokyo, LosAngeles, NewYork, Miami, Auckland, Hawai, Seychelles, Ubud, Dubai, Caraibes, Singapour];
-
 let PrixDécroissant =[Singapour, Caraibes, Dubai, Ubud, Seychelles, Hawai, Auckland, Miami, NewYork, LosAngeles, Tokyo, HongKong, Bombay, Pékin, Montreal, Bangkok, LeCaire, Hanoï, BuenosAires, Cancun, Casablanca, Marrakesh, Paris, Londres, Barcelone, Rome, CapeTown, Lima, Rio, LacTiticaca, Stockholm,];
-
-let LstContinent = [Europe,Asie,AmeriqueN,AmeriqueS,Afrique,IlesP];
 
 let LstEurope = [Paris,Barcelone,Londres,Rome,Stockholm];
 let LstAsie = [Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo];
@@ -109,7 +105,6 @@ barre.addEventListener('keyup',function(event){
 
 
 afficheimg();
-
 function afficheimg() {
 
     let link = ''
@@ -206,7 +201,6 @@ function afficheimg() {
 }
 
 function infosimg(i,h) {
-    
     image[i].style.width = "370px";
     image[i].style.height = "267px";
     image[i].style.marginTop = "0px";
@@ -293,7 +287,6 @@ function resa(h) {
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
         window.location.assign(lien);
     }
-
 }
 
 for (let i of LstVille) {
