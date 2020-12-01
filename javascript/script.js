@@ -93,6 +93,8 @@ let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,Hon
 function search(){
     for (var i of LstVille){
         if (barre.value == i.name){
+            tri.value = 10;
+            console.log(tri.value);
             return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
         }
     }
@@ -287,9 +289,9 @@ function resa(h) {
         window.location.assign(lien);
     }
 
-    else{
+    else if (tri.value == '10'){
         var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
-        window.localStorage.assign(lien);
+        window.location.assign(lien);
     }
 
 }
