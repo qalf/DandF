@@ -94,7 +94,7 @@ let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,Hon
 function search(){
     for (var i of LstVille){
         if (barre.value == i.name){
-            return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("../'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
         }
     }
     alert("La destination n'est pas encore dans notre catalogue");
@@ -110,7 +110,6 @@ barre.addEventListener('keyup',function(event){
 afficheimg();
 
 function afficheimg() {
-    console.log(tri.value);
 
     let link = ''
     affichage.innerHTML = '';
