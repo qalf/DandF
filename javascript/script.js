@@ -287,6 +287,11 @@ function resa(h) {
         window.location.assign(lien);
     }
 
+    else{
+        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
+        window.localStorage.assign(lien);
+    }
+
 }
 
 
