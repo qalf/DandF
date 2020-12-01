@@ -25,7 +25,7 @@ let Afrique = new continent(4, 'images/Continent/Afrique.jpeg', 'Afrique');
 let IlesP = new continent(5, 'images/Continent/IlesP.jpeg', 'Iles Paradisiaques');
 
 class ville{
-    constructor(id,id_continent,id_croissant,id_décroissant,link,name,continent,prix,name_api){
+    constructor(id,id_continent,id_croissant,id_décroissant,link,name,continent,prix,name_api,temp){
         this.id = id;
         this.id_continent = id_continent;
         this.id_croissant = id_croissant;
@@ -35,6 +35,7 @@ class ville{
         this.continent = continent
         this.prix = prix;
         this.name_api = name_api;
+        this.temp = temp;
     }
 }
 
@@ -94,8 +95,7 @@ function search(){
     for (var i of LstVille){
         if (barre.value == i.name){
             tri.value = 10;
-            console.log(tri.value);
-            return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+            return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
         }
     }
     alert("La destination n'est pas encore dans notre catalogue");
@@ -125,7 +125,7 @@ function afficheimg() {
     else if (tri.value == '2') {
         for (var i of PrixCroissant) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
             }
         }
         affichage.innerHTML += link;
@@ -135,7 +135,7 @@ function afficheimg() {
         var c = 0;
         for (var i of PrixDécroissant) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -146,7 +146,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstEurope) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -157,7 +157,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstAsie) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -167,7 +167,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstAmeriqueN) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -177,7 +177,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstAmeriqueS) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -187,7 +187,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstAfrique) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -197,7 +197,7 @@ function afficheimg() {
         var c = 0;
         for (var i of LstIlesP) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -296,7 +296,14 @@ function resa(h) {
 
 }
 
-
+for (let i of LstVille) {
+	fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name_api+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+	.then(res => res.json())
+	.then(data => {
+		var temp = Math.round(data.main.temp);
+        i.temp = temp;
+    })
+}
 
 
 
