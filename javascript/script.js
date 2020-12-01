@@ -234,6 +234,7 @@ function resa(h) {
     if (tri.value == '1'){
         var chemin = LstContinent[h].NomChemin;
         var lien = 'https://qalf.github.io/DandF/'+chemin;
+        tri.value = '4';
         window.location.assign(lien);
     
     }
