@@ -341,14 +341,14 @@ form{
 }
 
 
-form, textarea{
+input.renseignement, textarea{
     font: 1em sans-serif;
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
 }
 
-form:focus, textarea:focus{
+input.renseignement:focus, textarea:focus{
     border-color: #000;
 }
 
