@@ -295,5 +295,6 @@ for (let i of LstVille) {
 	.then(data => {
 		var temp = Math.round(data.main.temp);
         i.temp = temp;
+        afficheimg();
     })
 }
