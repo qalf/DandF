@@ -349,18 +349,37 @@ form{
 .date_depart:focus, textarea:focus{
     border-color: #000;
 }
-/*
-input.renseignement, textarea{
+
+.date_retour{
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+.date_retour:focus, textarea:focus{
+    border-color: #000;
+}
+
+.nb_adultes{
     font: 1em sans-serif;
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
 }
 
-input.renseignement:focus, textarea:focus{
+.nb_adultes:focus, textarea:focus{
     border-color: #000;
 }
-*/
+
+.nb_enfants{
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+.nb_enfants:focus, textarea:focus{
+    border-color: #000;
+}
 
 textarea{
     vertical-align: top;
@@ -378,7 +397,7 @@ textarea{
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: black; 
+    color: #b2b2b2; 
 }
 
 .supplement{
