@@ -84,7 +84,7 @@ let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,Hon
 function search(){
   for (var i of LstVille){
       if (barre.value == i.name){
-          window.location.assign('https://qalf.github.io/DandF/index.html');
+          window.location.assign('../index.html');
           return
       }
   }
