@@ -154,3 +154,9 @@ function DateVerif() {
     document.getElementsByClassName("prix_voyage")[0].innerHTML = prixTotal;
     return
   }
+
+  function Commande(){
+    var Commande = LstVille[sejour_id].name;
+    console.log(Commande);
+    return Commande
+  }
