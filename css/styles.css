@@ -334,7 +334,7 @@ footer{
 
 .form{
     margin: 0 auto;
-    width: 400px;
+    width: 300px;
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
@@ -350,7 +350,6 @@ label{
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
-    white-space: pre;
 }
 .date_depart:focus, textarea:focus{
     border-color: #000;
@@ -361,7 +360,6 @@ label{
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
-    white-space: pre;
 }
 .date_retour:focus, textarea:focus{
     border-color: #000;
@@ -372,7 +370,6 @@ label{
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
-    white-space: pre;
 }
 
 .nb_adultes:focus, textarea:focus{
@@ -384,10 +381,13 @@ label{
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
-    white-space: pre;
 }
 .nb_enfants:focus, textarea:focus{
     border-color: #000;
+}
+
+.prix_voyage{
+    white-space: pre-line;
 }
 
 textarea{
