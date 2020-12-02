@@ -340,18 +340,18 @@ form{
     border-radius: 1em;
 }
 
-/*
-input, textarea{
+
+input.form, textarea{
     font: 1em sans-serif;
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
 }
 
-input:focus, textarea:focus{
+input.form:focus, textarea:focus{
     border-color: #000;
 }
-*/
+
 
 textarea{
     vertical-align: top;
