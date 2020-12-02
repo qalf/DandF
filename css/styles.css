@@ -344,7 +344,8 @@ footer{
     font: 1em sans-serif;
     width: 300px;
     box-sizing: border-box;
-    border: 1px solid #999; 
+    border: 1px solid #999;
+    white-space: pre; 
 }
 
 .nom_prenom:focus, textarea:focus{
@@ -355,7 +356,8 @@ footer{
     font: 1em sans-serif;
     width: 300px;
     box-sizing: border-box;
-    border: 1px solid #999;  
+    border: 1px solid #999; 
+    white-space: pre; 
 }
 
 .mail:focus, textarea:focus{
