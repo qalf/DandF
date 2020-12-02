@@ -366,15 +366,10 @@ textarea{
 }
 
 .renseignement{
-    font: 1em sans-serif;
-    width: 300px;
-    box-sizing: border-box;
-    border: 1px solid #999;
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #b2b2b2;
-    border-color: #000; 
+    color: black; 
 }
 
 .supplement{
