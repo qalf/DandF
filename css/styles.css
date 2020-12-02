@@ -340,6 +340,15 @@ form{
     border-radius: 1em;
 }
 
+.date_depart{
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+.date_depart:focus, textarea:focus{
+    border-color: #000;
+}
 /*
 input.renseignement, textarea{
     font: 1em sans-serif;
