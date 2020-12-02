@@ -334,10 +334,43 @@ footer{
 
 .form{
     margin: 0 auto;
-    width: 400px;
+    width: 300px;
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
+}
+
+.nom_prenom{
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999; 
+}
+
+.nom_prenom:focus, textarea:focus{
+    border-color: #000;
+}
+
+.mail{
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;  
+}
+
+.mail:focus, textarea:focus{
+    border-color: #000;
+}
+
+.tel{
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;  
+}
+
+.tel:focus, textarea:focus{
+    border-color: #000;
 }
 
 .date_depart{
@@ -346,12 +379,18 @@ footer{
     box-sizing: border-box;
     border: 1px solid #999;
 }
+.date_depart:focus, textarea:focus{
+    border-color: #000;
+}
 
 .date_retour{
     font: 1em sans-serif;
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
+}
+.date_retour:focus, textarea:focus{
+    border-color: #000;
 }
 
 .nb_adultes{
@@ -361,12 +400,18 @@ footer{
     border: 1px solid #999;
 }
 
+.nb_adultes:focus, textarea:focus{
+    border-color: #000;
+}
 
 .nb_enfants{
     font: 1em sans-serif;
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
+}
+.nb_enfants:focus, textarea:focus{
+    border-color: #000;
 }
 
 textarea{
