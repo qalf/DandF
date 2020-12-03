@@ -5,8 +5,8 @@ var tri = document.getElementById('tri');
 let barre = document.getElementById('barre');
 let loupe = document.getElementById('loupe');
 var prixmax = document.getElementById('prixmax');
+let path = window.location.pathname;
 
-console.log(window.location.pathname);
 
 
 class continent {
@@ -291,12 +291,14 @@ function resa(h) {
     }
 }
 
-for (let i of LstVille) {
-	fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name_api+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
-	.then(res => res.json())
-	.then(data => {
-		var temp = Math.round(data.main.temp);
-        i.temp = temp;
-        afficheimg();
-    })
+if (path == '/DandF/index.html'){
+    for (let i of LstVille) {
+    	fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name_api+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
+    	.then(res => res.json())
+    	.then(data => {
+    		var temp = Math.round(data.main.temp);
+            i.temp = temp;
+            afficheimg();
+        })
+    }
 }
