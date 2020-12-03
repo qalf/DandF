@@ -325,18 +325,12 @@ if (path == '/DandF/html/Espace-perso.html'){
             	.then(res => res.json())
             	.then(data => {
                     if (data.members[i].name === utilisateur.value && data.members[i].mdp === mdp.value){
-                        console.log("coco")
+                        connect();
+                        break
                     }
-
-                        //if (data['members'][i]['name'] === utilisateur.value && data['members'][i]['mdp'] === mdp.value){
-                        //    console.log("coco")
-                        //    connect();
-                        //    return
-                        //} 
-                    
-                    //alert("Ce compte n'existe pas")
                 })
         }
+        alert("Ce compte n'existe pas");
     })
 }
 
