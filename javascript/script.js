@@ -104,7 +104,6 @@ barre.addEventListener('keyup',function(event){
 })
 
 
-afficheimg();
 function afficheimg() {
 
     let link = ''
