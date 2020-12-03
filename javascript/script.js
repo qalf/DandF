@@ -7,6 +7,8 @@ let loupe = document.getElementById('loupe');
 var prixmax = document.getElementById('prixmax');
 let path = window.location.pathname;
 let connexion = document.getElementById('connexion');
+let mdp = document.getElementById('mdp');
+let utilisateur = document.getElementById('nom-utilisateur');
 
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
@@ -315,20 +317,27 @@ if (path == '/DandF/index.html' || path == '/DandF/'){
     }
 }
 
+if (path == '/DandF/html/Espace-perso.html'){
+    connexion.addEventListener('submit', function(event){
+        event.preventDefault();
+        fetch('../compte.txt')
+        	.then(res => res.json())
+        	.then(data => {
+                console.log(data);
+                for (var i = 0;i<length(data)+1;i++){
+                    if (data[i].user == utilisateur && data[i].mdp == mdp){
+                        connect();
+                        break
+                    } 
+                }
+                alert("Ce compte n'existe pas")
+            })
+    })
+}
 
-connexion.addEventListener('submit', function(event){
-    event.preventDefault();
-    fetch('../compte.txt')
-    	.then(res => res.json())
-    	.then(data => {
-            console.log(data);  
-        
-        })
-
-
-})
-
-
+function connect(){
+        console.log("vous êtes connecté");
+}
 
 function CalculPrixBase() {
     var PrixBase = LstVille[sejour_id].prix;
