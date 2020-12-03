@@ -1,23 +1,27 @@
-{
-	"user" : "John",
-	"mdp"  : 12345
+{ 
+	utilisateurs :[
+		{
+			"user" : "John",
+			"mdp"  : 12345
 
-}
+		},
 
-{
-	"user" : "Alexandre",
-	"mdp"  : alex123
+		{
+			"user" : "Alexandre",
+			"mdp"  : alex123
 
-}
+		}
 
-{
-	"user" : "Lucas",
-	"mdp"  : 12345
+		{
+			"user" : "Lucas",
+			"mdp"  : 12345
 
-}
+		}
 
-{
-	"user" : "shrek",
-	"mdp"  : fionalove
+		{
+			"user" : "shrek",
+			"mdp"  : fionalove
 
+		}
+	]
 }
