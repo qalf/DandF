@@ -6,6 +6,7 @@ let barre = document.getElementById('barre');
 let loupe = document.getElementById('loupe');
 var prixmax = document.getElementById('prixmax');
 let path = window.location.pathname;
+let connexion = document.getElementById('connexion');
 
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
@@ -313,6 +314,18 @@ if (path == '/DandF/index.html' || path == '/DandF/'){
         })
     }
 }
+
+
+connexion.addEventListener('submit', function(event){
+    event.preventDefault();
+    fetch('../compte.txt')
+    	.then(res => res.json())
+    	.then(data => {
+    		console.log(data);
+        })
+
+
+})
 
 
 
