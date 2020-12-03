@@ -323,11 +323,10 @@ if (path == '/DandF/html/Espace-perso.html'){
         fetch('../compte.txt')
         	.then(res => res.json())
         	.then(data => {
-                console.log(data);
-
-
                 for (var i = 0;i<data.length+1;i++){
-                    if (data['members'][i]['name'] == utilisateur.value && data['members'][i]['mdp'] == mdp.value){
+                    console.log(data['members'][i]['name']);
+                    console.log(data['members'][i]['mdp']);
+                    if (data['members'][i]['name'] === utilisateur.value && data['members'][i]['mdp'] === mdp.value){
                         console.log("coco")
                         connect();
                         return
