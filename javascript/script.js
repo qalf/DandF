@@ -324,7 +324,7 @@ if (path == '/DandF/html/Espace-perso.html'){
         	.then(res => res.json())
         	.then(data => {
                 for (var i = 0;i<data.length+1;i++){
-                    console.log(data['members'][i].name);
+                    console.log(data.members[i].name);
                     console.log(data['members'][i]['mdp']);
                     //if (data['members'][i]['name'] === utilisateur.value && data['members'][i]['mdp'] === mdp.value){
                     //    console.log("coco")
