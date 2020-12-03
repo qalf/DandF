@@ -321,7 +321,8 @@ connexion.addEventListener('submit', function(event){
     fetch('../compte.txt')
     	.then(res => res.json())
     	.then(data => {
-    		console.log(data);
+            console.log(data);  
+        
         })
 
 

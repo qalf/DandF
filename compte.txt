@@ -1,5 +1,23 @@
 {
-	"name" : "John",
-	"age"  : 31,
-	"city" : "New York"
+	"user" : "John",
+	"mdp"  : 12345
+
+}
+
+{
+	"user" : "Alexandre",
+	"mdp"  : alex123
+
+}
+
+{
+	"user" : "Lucas",
+	"mdp"  : 12345
+
+}
+
+{
+	"user" : "shrek",
+	"mdp"  : fionalove
+
 }
