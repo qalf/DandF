@@ -91,13 +91,24 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 function search(){
-    for (var i of LstVille){
-        if (barre.value == i.name){
-            tri.value = 10;
-            return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
+    if (path == '/DandF/index.html' || path == '/DandF/'){
+        for (var i of LstVille){
+            if (barre.value == i.name){
+                tri.value = 10;
+                return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
+            }
         }
+        alert("La destination n'est pas encore dans notre catalogue");
     }
-    alert("La destination n'est pas encore dans notre catalogue");
+    
+    else {
+        for (var i of LstVille){
+            if (barre.value == i.name){
+                window.location.assign('../index.html');
+            }
+        }
+        alert("La destination n'est pas encore dans notre catalogue");
+    }
 }
 
 barre.addEventListener('keyup',function(event){
