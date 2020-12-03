@@ -155,8 +155,8 @@ function DateVerif() {
     return
   }
 
-  function Commande(){
-    var Commande = LstVille[sejour_id].name;
-    console.log(Commande);
-    return Commande
-  }
+ // function Commande(){
+   // var Commande = LstVille[sejour_id].name;
+   // console.log(Commande);
+   // return Commande
+  //}
