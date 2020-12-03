@@ -6,6 +6,9 @@ let barre = document.getElementById('barre');
 let loupe = document.getElementById('loupe');
 var prixmax = document.getElementById('prixmax');
 
+console.log(window.location.pathname);
+
+
 class continent {
     constructor(id, link, name) {
         this.id = id;
