@@ -330,7 +330,6 @@ if (path == '/DandF/html/Espace-perso.html'){
                     }
                 })
         }
-        alert("Ce compte n'existe pas");
     })
 }
 
