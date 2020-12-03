@@ -108,7 +108,6 @@ barre.addEventListener('keyup',function(event){
 
 
 function afficheimg() {
-
     let link = ''
     affichage.innerHTML = '';
 
@@ -291,7 +290,7 @@ function resa(h) {
     }
 }
 
-if (path == '/DandF/index.html'){
+if (path == '/DandF/index.html' || path == '/DandF/'){
     for (let i of LstVille) {
     	fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name_api+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
     	.then(res => res.json())
