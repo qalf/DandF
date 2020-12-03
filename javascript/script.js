@@ -320,12 +320,13 @@ if (path == '/DandF/index.html' || path == '/DandF/'){
 if (path == '/DandF/html/Espace-perso.html'){
     connexion.addEventListener('submit', function(event){
         event.preventDefault();
-        for (let i = 0 ; i < 4 ; i++){
+        for (let i = 0 ; i < 3 ; i++){
             fetch('../compte.txt')
             	.then(res => res.json())
             	.then(data => {
-                    console.log(data.members[i].name);
-                    console.log(data.members[i].mdp);
+                    if (data.members[i].name === utilisateur.value && data.members[i].mdp === mdp.value){
+                        console.log("coco")
+                    }
 
                         //if (data['members'][i]['name'] === utilisateur.value && data['members'][i]['mdp'] === mdp.value){
                         //    console.log("coco")
