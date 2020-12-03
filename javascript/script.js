@@ -325,7 +325,7 @@ if (path == '/DandF/html/Espace-perso.html'){
         	.then(data => {
                 console.log(data);
                 for (var i = 0;i<data.length+1;i++){
-                    if ([i].user == utilisateur && [i].mdp == mdp){
+                    if (data['members'][i]['name'] == utilisateur && data['members'][i]['mdp'] == mdp){
                         connect();
                         break
                     } 

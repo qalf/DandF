@@ -1,10 +1,16 @@
-[
-  {
-    "user": "Lucas",
-    "mdp": "123"
-  },
-  {
-    "user": "Alexandre",
-    "mdp": "aze"
-  }
-]
+{
+  "members": [
+    {
+      "name": "Lucas",
+      "mdp": "123
+    },
+    {
+      "name": "Alexandre",
+      "mdp": "aze
+    },
+    {
+      "name": "Shrek",
+      "mdp": "oeoe"
+    }
+  ]
+}
