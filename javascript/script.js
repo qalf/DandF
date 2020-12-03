@@ -320,7 +320,7 @@ if (path == '/DandF/index.html' || path == '/DandF/'){
 if (path == '/DandF/html/Espace-perso.html'){
     connexion.addEventListener('submit', function(event){
         event.preventDefault();
-        for (var i = 0 ; i < 4 ; i++){
+        for (let i = 0 ; i < 4 ; i++){
             fetch('../compte.txt')
             	.then(res => res.json())
             	.then(data => {
