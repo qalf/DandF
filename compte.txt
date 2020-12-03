@@ -10,13 +10,13 @@
 			"user" : "Alexandre",
 			"mdp"  : alex123
 
-		}
+		},
 
 		{
 			"user" : "Lucas",
 			"mdp"  : 12345
 
-		}
+		},
 
 		{
 			"user" : "shrek",
