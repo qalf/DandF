@@ -1,10 +1,10 @@
 [
   {
     "user": "Lucas",
-    "mdp": 123
+    "mdp": "123"
   },
   {
     "user": "Alexandre",
-    "mdp": aze
+    "mdp": "aze"
   }
 ]
