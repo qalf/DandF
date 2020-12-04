@@ -393,6 +393,10 @@ function prixTotal(){
     return
 }
 
+function reset(){
+    document.getElementById("resa").reset();
+}
+
 // function Commande(){
     // var Commande = LstVille[sejour_id].name;
     // console.log(Commande);
