@@ -417,7 +417,7 @@ function petitDej(){
     var checkbox = document.getElementById("dej_checkbox");
     var dej = 0;
     if (checkbox.checked == true){
-        dej = 1.5*(document.getElementById("nb_adultes").value + document.getElementById("nb_enfants").value)*dureeSejour();
+        dej = 1.2*(document.getElementById("nb_adultes").value + document.getElementById("nb_enfants").value)*dureeSejour();
     }
     return dej
 }
