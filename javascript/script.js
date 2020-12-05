@@ -10,6 +10,7 @@ let connexion = document.getElementById('connexion');
 let mdp = document.getElementById('mdp');
 let utilisateur = document.getElementById('nom-utilisateur');
 let loginBox2 = document.getElementById('login-box2');
+let compte = document.getElementById('compte');
 
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
@@ -329,7 +330,7 @@ function connexionload(){
             if (user == value){
                 if(mdp == localStorage.getItem('mdp'+key[4])){
                     connect();
-                    return
+                    return 
                 }
             }
         }
@@ -341,8 +342,21 @@ function connexionload(){
    
 function connect(){
     alert("Vous êtes connecté");
+    localStorage.setItem('co', true);
+    location.reload();
 }
 
+function EstConnecté(){
+    if (localStorage.getItem('co') === 'true'){
+        compte.innerHTML = '<i class="fas fa-user"></i>';
+    }
+}
+
+function deconnection(){
+    localStorage.setItem('co', false);
+    compte.innerHTML = '<i class="fas fa-user"></i>';
+    location.reload();
+}
 
 function creacompte(){
     loginBox2.innerHTML = '<form id="connexion2"><h2>Création compte</h2><div class="textbox2"><i class="fas fa-user"></i><input id="nom-utilisateur2" type="text" placeholder="Nom utilisateur" required></div><div class="textbox2"><i class="fas fa-envelope"></i><input id="email" type="email" placeholder="E-mail" required></div><div class="textbox2"><i class="fas fa-lock"></i><input id="mdp20" type="password" placeholder="Mot de passe" required></div><div class="textbox2"><i class="fas fa-lock"></i><input id="mdp21" type="password" placeholder="Confirmation mot de passe" required></div><input type="submit" id="btn" value="Créer"><input type="button" id="btn2" value="Se connecter" onclick="location.reload()"></form>';

@@ -105,6 +105,15 @@ nav{
     padding: 0 20px;
 }
 
+#compte{
+    height: 50px;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 150%;
+}
+
 .bandeau-courant::after{
     content: "";
     display: flex;

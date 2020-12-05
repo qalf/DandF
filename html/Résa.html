@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <title>DandF</title>
     </head>
-    <body id="body">
+    <body id="body" onload="EstConnecté()">
         <header>
             <h1>
                 <img class="erable" src="../images/erable.svg">
@@ -17,7 +17,8 @@
                 <a class="bandeau" href="../index.html">Accueil</a>
                 <a class="bandeau" href="Panier.html">Panier</a>
                 <a class="bandeau" href="Contact.html">Contact</a>
-                <a class="bandeau" href="Espace-perso.html">Espace Perso</a>
+                <a class="bandeau" href="Compte.html">Compte</a>
+                <div id="compte" onclick="deconnection()"><i class="fas fa-user-slash"></i></div>
             </nav>
             <div id="barre-recherche">
                 <input id="barre" type="search" placeholder="Rechercher une destination">
