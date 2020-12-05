@@ -376,7 +376,6 @@ function creacompte(){
                     nbr_compte = i+1;
                  }
             }
-            console.log(nbr_compte);
             localStorage.setItem('0', nbr_compte);
             localStorage.setItem('user'+nbr_compte, user);
             localStorage.setItem('mdp'+nbr_compte, mdp20);
@@ -389,7 +388,6 @@ function creacompte(){
 
 function CalculPrixBase() {
     var PrixBase = LstVille[sejour_id].prix;
-    console.log(PrixBase);
     return PrixBase
 }
 
@@ -432,19 +430,20 @@ function petitDej(){
     var checkbox = document.getElementById("dej_checkbox");
     var dej = 0;
     if (checkbox.checked == true){
-        dej = 1.2*(document.getElementById("nb_adultes").value + document.getElementById("nb_enfants").value)*dureeSejour();
+        dej = 12*(parseInt(document.getElementById("nb_adultes").value) + parseInt(document.getElementById("nb_enfants").value))*dureeSejour();
     }
     return dej
 }
 
 function prixTotal(){
     var prixTotal = prixEnfants() + prixAdultes() + petitDej();
-    document.getElementsByClassName("prix_voyage")[0].innerHTML = prixTotal;
-    return
+    document.getElementById("prix_voyage").innerHTML = prixTotal;
+    
 }
 
-function reset(){
+function annulation(){
     document.getElementById("resa").reset();
+    location.reload();
 }
 
 // function Commande(){
