@@ -9,6 +9,7 @@ let path = window.location.pathname;
 let connexion = document.getElementById('connexion');
 let mdp = document.getElementById('mdp');
 let utilisateur = document.getElementById('nom-utilisateur');
+let loginBox2 = document.getElementById('login-box2');
 
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
@@ -305,7 +306,7 @@ function resa(h) {
     }
 }
 
-if (path == '/DandF/index.html' || path == '/DandF/'){
+function affichetemp() {
     for (let i of LstVille) {
     	fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name_api+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
     	.then(res => res.json())
@@ -317,25 +318,59 @@ if (path == '/DandF/index.html' || path == '/DandF/'){
     }
 }
 
-if (path == '/DandF/html/Espace-perso.html'){
+function connexionload(){
     connexion.addEventListener('submit', function(event){
+        let user = document.getElementById('nom-utilisateur').value;
+        let mdp = document.getElementById('mdp').value;
         event.preventDefault();
-        for (let i = 0 ; i < 3 ; i++){
-            fetch('../compte.txt')
-            	.then(res => res.json())
-            	.then(data => {
-                    if (data.members[i].name === utilisateur.value && data.members[i].mdp === mdp.value){
-                        connect();
-                        return
-                    }
-                })
+        for (var i = 0 ; i<localStorage.length ; i++){
+            let key = localStorage.key(i);
+            let value = localStorage.getItem(key);
+            if (user == value){
+                if(mdp == localStorage.getItem('mdp'+key[4])){
+                    connect();
+                    return
+                }
+            }
+        }
+        alert("Ce compte n'existe pas");
+    })
+}
+
+
+   
+function connect(){
+    alert("Vous êtes connecté");
+}
+
+
+function creacompte(){
+    loginBox2.innerHTML = '<form id="connexion2"><h2>Création compte</h2><div class="textbox2"><i class="fas fa-user"></i><input id="nom-utilisateur2" type="text" placeholder="Nom utilisateur" required></div><div class="textbox2"><i class="fas fa-envelope"></i><input id="email" type="email" placeholder="E-mail" required></div><div class="textbox2"><i class="fas fa-lock"></i><input id="mdp20" type="password" placeholder="Mot de passe" required></div><div class="textbox2"><i class="fas fa-lock"></i><input id="mdp21" type="password" placeholder="Confirmation mot de passe" required></div><input type="submit" id="btn" value="Créer"><input type="button" id="btn2" value="Se connecter" onclick="location.reload()"></form>';
+    connexion2.addEventListener('submit', function(event){
+        event.preventDefault();
+        let nbr_compte = 0;
+        let mdp20 = document.getElementById('mdp20').value;
+        let mdp21 = document.getElementById('mdp21').value;
+        let user = document.getElementById('nom-utilisateur2').value;
+        if (mdp20 !== mdp21 ){
+            alert("Les mots de passes doivent être identique");
+        }
+        else{
+            for (i=0 ; i<10;i++){
+                 if (localStorage.getItem('0') == i){
+                    nbr_compte = i+1;
+                 }
+            }
+            console.log(nbr_compte);
+            localStorage.setItem('0', nbr_compte);
+            localStorage.setItem('user'+nbr_compte, user);
+            localStorage.setItem('mdp'+nbr_compte, mdp20);
+            location.reload();
         }
     })
 }
 
-function connect(){
-        console.log("vous êtes connecté");
-}
+
 
 function CalculPrixBase() {
     var PrixBase = LstVille[sejour_id].prix;
