@@ -355,6 +355,7 @@ function EstConnecté(){
 function deconnection(){
     localStorage.setItem('co', false);
     compte.innerHTML = '<i class="fas fa-user"></i>';
+    alert("Vous êtes deconnecté");
     location.reload();
 }
 
