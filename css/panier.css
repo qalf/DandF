@@ -1,7 +1,7 @@
 .panier{
     min-height: 400px;
     width: 80%;
-    margin: 2% auto;
+    margin: 5% auto;
     display: flex;
     flex-flow: wrap;
     align-items: flex-start;
