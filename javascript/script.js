@@ -13,7 +13,7 @@ let loginBox2 = document.getElementById('login-box2');
 let compte = document.getElementById('compte');
 let submitResa = document.getElementById('resa');
 let panierVoyage = document.getElementById('panier-voyage');
-
+let divPrix = document.getElementById('prixtot');
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
 
@@ -454,12 +454,27 @@ function submitR(){
         event.preventDefault();
         let ville = LstVille[sejour_id].name;
         let datedepart = new Date(document.getElementById("date_depart").value);
+        let jourD = datedepart.getDate();
+        let moisD = datedepart.getMonth()+1;
+        let annéeD = datedepart.getFullYear();
         let dateretour = new Date(document.getElementById("date_retour").value);
+        let jourR = dateretour.getDate();
+        let moisR = dateretour.getMonth()+1;
+        let annéeR = dateretour.getFullYear();
         let prix = document.getElementById("prix_voyage").textContent || document.getElementById("prix_voyage").innerText
         let numéro = getRandomInt(1000,9999);
-        let LstInfo = [ville, datedepart, dateretour, prix, numéro];
+
+        let LstInfo = [ville, jourD, moisD, annéeD ,jourR, moisR, annéeR, prix, numéro, sejour_id];
         let lien = 'Panier.html';
-        localStorage.setItem('voyage', LstInfo);
+        let nbr_voyage = 0;
+
+        for (i=0 ; i<30;i++){
+            if (localStorage.getItem('1') == i){
+               nbr_voyage = i+1;
+            }
+        }
+        localStorage.setItem('1', nbr_voyage);
+        localStorage.setItem('voyage'+nbr_voyage, LstInfo);
         window.location.assign(lien);
     })
 
@@ -472,11 +487,46 @@ function getRandomInt(min,max) {
 }
 
 function panier(){
-    let LstInfo = localStorage.getItem('voyage').split(',')
-    let ville = LstInfo[0];
-    let datedepart = LstInfo[1];
-    let dateretour = LstInfo[2];
-    let prix = LstInfo[3]
-    let numéro = LstInfo[4];
-    panierVoyage.innerHTML = '<div id="voyage1">'+ville+'  '+prix+'  '+'n°:'+numéro+'</div>'
+    var affichepanier = '';
+    var prixtot = 0;
+    for (var i=0;i<localStorage.length+1;i++){
+        if (typeof localStorage.getItem('voyage'+i) == 'string'){
+            var LstInfo = localStorage.getItem('voyage'+i).split(',');
+            var ville = LstInfo[0];
+            var jourD = LstInfo[1];
+            var moisD = LstInfo[2];
+            var annéeD = LstInfo[3];
+            var jourR = LstInfo[4];
+            var moisR = LstInfo[5];
+            var annéeR = LstInfo[6];
+            var prix = LstInfo[7];
+            var numéro = LstInfo[8];
+            var id = LstInfo[9];
+            prixtot += parseInt(prix);
+            if (jourD<10){
+                var jourD = 0+jourD;
+            }
+            if (moisD<10){
+                var moisD = 0+moisD;
+            }
+        
+            if (jourR<10){
+                var jourR = 0+jourR;
+            }
+            if (moisR<10){
+                var moisR = 0+moisR;
+            }
+            affichepanier += '<div class="voyage" onclick="modif('+id+','+i+')"><div class ="nom-ville">'+ ville +'</div><div class="dateD">du : '+'<input class="date" type="date" value="'+annéeD+'-'+moisD+'-'+ jourD +'" disabled></div>'+'<div class="dateR">au :  '+'<input  class="date" type="date" value="'+annéeR+'-'+moisR+'-'+ jourR +'" disabled></div><div class="prix">Prix : '+prix+' €</div>'+'<div class="numéro-résa">n°: '+numéro+'</div></div>';
+        }  
+    }
+    panierVoyage.innerHTML += affichepanier;
+    divPrix.innerHTML = 'Prix Total : '+prixtot + ' €';
+}
+
+function modif(i,h){
+    var index = h;
+    localStorage.removeItem('voyage'+index);
+    var id = i;
+    var lien = 'Résa.html?id='+id;
+    window.location.assign(lien);
 }
