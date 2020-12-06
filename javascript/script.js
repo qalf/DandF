@@ -12,6 +12,7 @@ let utilisateur = document.getElementById('nom-utilisateur');
 let loginBox2 = document.getElementById('login-box2');
 let compte = document.getElementById('compte');
 let submitResa = document.getElementById('resa');
+let panierVoyage = document.getElementById('panier-voyage');
 
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
@@ -256,54 +257,54 @@ function resa(h) {
     }
     else if (tri.value == '2'){
         var id = PrixCroissant[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        var lien = 'html/Résa.html?id=' + id;
         window.location.assign(lien);
     }
 
     else if (tri.value == '3'){
         var id = PrixDécroissant[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        var lien = 'html/Résa.html?id=' + id;
         window.location.assign(lien);
     }
 
     else if (tri.value == '4'){
         var id = LstEurope[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        var lien = 'html/Résa.html?id=' + id;
         window.location.assign(lien);
     }
 
     else if (tri.value == '5'){
         var id = LstAsie[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        var lien = 'html/Résa.html?id=' + id;
         window.location.assign(lien);
     }
 
     else if (tri.value == '6'){
         var id = LstAmeriqueN[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        var lien = 'html/Résa.html?id=' + id;
         window.location.assign(lien);
     }
 
     else if (tri.value == '7'){
         var id = LstAmeriqueS[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        var lien = 'html/Résa.html?id=' + id;
         window.location.assign(lien);
     }
 
     else if (tri.value == '8'){
         var id = LstAfrique[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        var lien = 'html/Résa.html?id=' + id;
         window.location.assign(lien);
     }
 
     else if (tri.value == '9'){
         var id = LstIlesP[h].id;
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + id;
+        var lien = 'html/Résa.html?id=' + id;
         window.location.assign(lien);
     }
 
     else if (tri.value == '10'){
-        var lien = 'https://qalf.github.io/DandF/html/Résa.html?id=' + h;
+        var lien = 'html/Résa.html?id=' + h;
         window.location.assign(lien);
     }
 }
@@ -456,9 +457,9 @@ function submitR(){
         let dateretour = new Date(document.getElementById("date_retour").value);
         let prix = document.getElementById("prix_voyage").textContent || document.getElementById("prix_voyage").innerText
         let numéro = getRandomInt(1000,9999);
-        let infovoyage = [ville, datedepart, dateretour, prix, numéro];
-        let lien = 'https://qalf.github.io/DandF/html/Panier.html';
-        localStorage.setItem('voyage', infovoyage);
+        let LstInfo = [ville, datedepart, dateretour, prix, numéro];
+        let lien = 'Panier.html';
+        localStorage.setItem('voyage', LstInfo);
         window.location.assign(lien);
     })
 
@@ -468,4 +469,14 @@ function getRandomInt(min,max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min +1)) + min;
-  }
+}
+
+function panier(){
+    let LstInfo = localStorage.getItem('voyage').split(',')
+    let ville = LstInfo[0];
+    let datedepart = LstInfo[1];
+    let dateretour = LstInfo[2];
+    let prix = LstInfo[3]
+    let numéro = LstInfo[4];
+    panierVoyage.innerHTML = '<div id="voyage1">'+ville+'  '+prix+'  '+'n°:'+numéro+'</div>'
+}
