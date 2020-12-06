@@ -11,6 +11,7 @@ let mdp = document.getElementById('mdp');
 let utilisateur = document.getElementById('nom-utilisateur');
 let loginBox2 = document.getElementById('login-box2');
 let compte = document.getElementById('compte');
+let submitResa = document.getElementById('resa');
 
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
@@ -360,7 +361,7 @@ function deconnection(){
 }
 
 function creacompte(){
-    loginBox2.innerHTML = '<form id="connexion2"><h2>Création compte</h2><div class="textbox2"><i class="fas fa-user"></i><input id="nom-utilisateur2" type="text" placeholder="Nom utilisateur" required></div><div class="textbox2"><i class="fas fa-envelope"></i><input id="email" type="email" placeholder="E-mail" required></div><div class="textbox2"><i class="fas fa-lock"></i><input id="mdp20" type="password" placeholder="Mot de passe" required></div><div class="textbox2"><i class="fas fa-lock"></i><input id="mdp21" type="password" placeholder="Confirmation mot de passe" required></div><input type="submit" id="btn" value="Créer"><input type="button" id="btn2" value="Se connecter" onclick="location.reload()"></form>';
+    loginBox2.innerHTML = '<form id="connexion2"><h2>Création compte</h2><div class="textbox"><i class="fas fa-user"></i><input id="nom-utilisateur2" type="text" placeholder="Nom utilisateur" required></div><div class="textbox"><i class="fas fa-envelope"></i><input id="email" type="email" placeholder="E-mail" required></div><div class="textbox"><i class="fas fa-lock"></i><input id="mdp20" type="password" placeholder="Mot de passe" required></div><div class="textbox"><i class="fas fa-lock"></i><input id="mdp21" type="password" placeholder="Confirmation mot de passe" required></div><input type="submit" id="btn" value="Créer"><input type="button" id="btn2" value="Se connecter" onclick="location.reload()"></form>';
     connexion2.addEventListener('submit', function(event){
         event.preventDefault();
         let nbr_compte = 0;
@@ -437,8 +438,9 @@ function petitDej(){
 
 function prixTotal(){
     var prixTotal = prixEnfants() + prixAdultes() + petitDej();
-    document.getElementById("prix_voyage").innerHTML = prixTotal;
-    
+    if (prixTotal > 1){
+        document.getElementById("prix_voyage").innerHTML = prixTotal;
+    }
 }
 
 function annulation(){
@@ -446,9 +448,24 @@ function annulation(){
     location.reload();
 }
 
-// function Commande(){
-    // var Commande = LstVille[sejour_id].name;
-    // console.log(Commande);
-    // return Commande
-//}
+function submitR(){
+    submitResa.addEventListener('submit', function(event){
+        event.preventDefault();
+        let ville = LstVille[sejour_id].name;
+        let datedepart = new Date(document.getElementById("date_depart").value);
+        let dateretour = new Date(document.getElementById("date_retour").value);
+        let prix = document.getElementById("prix_voyage").textContent || document.getElementById("prix_voyage").innerText
+        let numéro = getRandomInt(1000,9999);
+        let infovoyage = [ville, datedepart, dateretour, prix, numéro];
+        let lien = 'https://qalf.github.io/DandF/html/Panier.html';
+        localStorage.setItem('voyage', infovoyage);
+        window.location.assign(lien);
+    })
 
+}
+
+function getRandomInt(min,max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min +1)) + min;
+  }

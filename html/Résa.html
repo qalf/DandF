@@ -2,11 +2,12 @@
 <html lang="fr">
     <head>
         <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/résa.css">
         <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
         <meta charset="UTF-8">
         <title>DandF</title>
     </head>
-    <body id="body" onload="EstConnecté(), prixTotal(), CalculPrixBase()">
+    <body id="body" onload="EstConnecté(), prixTotal(), CalculPrixBase(), submitR()">
         <header>
             <h1>
                 <img class="erable" src="../images/erable.svg">
@@ -89,8 +90,8 @@
             <div class="prix-div">
                 <h3 id="prix">Prix du voyage :  <span id="prix_voyage"></span></h3>
 
-                <input type="submit" id="btn2" formaction="../html/Panier.html" value="Valider">
-                <input type="button" id="btn2" value="Remise à zéro de la commande" onclick="annulation()">
+                <input type="submit" id="submit-résa" value="Valider">
+                <input type="button" id="zéro" value="Remise à zéro de la commande" onclick="annulation()">
 
             </div>
         </form>
