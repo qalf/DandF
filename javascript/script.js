@@ -489,7 +489,7 @@ function getRandomInt(min,max) {
 function panier(){
     var affichepanier = '';
     var prixtot = 0;
-    for (var i=0;i<localStorage.length+1;i++){
+    for (var i=0;i<30;i++){
         if (typeof localStorage.getItem('voyage'+i) == 'string'){
             var LstInfo = localStorage.getItem('voyage'+i).split(',');
             var ville = LstInfo[0];
