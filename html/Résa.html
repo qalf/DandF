@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <title>DandF</title>
     </head>
-    <body id="body" onload="EstConnecté(), prixTotal(), CalculPrixBase(), submitR()">
+    <body id="body" onload="EstConnecté(), prixTotal(), CalculPrixBase(), submitR(), NomVille()">
         <header>
             <h1>
                 <img class="erable" src="../images/erable.svg">
@@ -25,88 +25,91 @@
                 <img id ="loupe" src="../images/loupe.png" onclick="search()"></i>
             </div>
         </header>
+        <div id="container-Résa">
+            <form id="resa" onchange="prixTotal(), CalculPrixBase()">
+                <h2 id="résa-text">Réservation</h2>
+                <div class="informations">
+                    <h3>Vos informations</h3>
+                    <div class="textbox">
+                        <i class="fas fa-user-plus"></i>
+                        <input id="nom" type="text" placeholder="Nom" required>
+                    </div>
+                    <div class="textbox">
+                        <i class="fas fa-user-plus"></i>
+                        <input type="text" placeholder="Prénom" required>
+                    </div>
+                    <div class="textbox">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="textbox">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" placeholder="Téléphone" required>
+                    </div>
+                </div>
+                <div class="renseignement">
+                    <h3>Date de votre voyage</h3>
+                    <div class="textbox">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="date_depart" name="start" onchange="DateVerif()" required>
+                    </div>
+                    <div class="textbox">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="date_retour" name="return" onchange="DateVerif()" required>
+                    </div>
+                </div>
+                <div class="supplement">
+                    <h3>Nombre de voyageurs</h3>
+                    <label>Nombre d'adultres :</label>
+                    <div class="voyageurs">
+                        <select name="nb_adultes" id="nb_adultes">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
 
-        <form id="resa" onchange="prixTotal(), CalculPrixBase()">
-            <h2 id="résa-text">Réservation</h2>
-            <div class="informations">
-                <h3>Vos informations</h3>
-                <div class="textbox">
-                    <i class="fas fa-user-plus"></i>
-                    <input id="nom" type="text" placeholder="Nom" required>
-                  </div>
-                  <div class="textbox">
-                    <i class="fas fa-user-plus"></i>
-                    <input type="text" placeholder="Prénom" required>
-                  </div>
-                  <div class="textbox">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="E-mail" required>
-                  </div>
-                  <div class="textbox">
-                    <i class="fas fa-phone"></i>
-                    <input type="tel" placeholder="Téléphone" required>
-                  </div>
-            </div>
-            <div class="renseignement">
-                <h3>Date de votre voyage</h3>
-                <div class="textbox">
-                    <i class="fas fa-calendar-alt"></i>
-                    <input type="date" id="date_depart" name="start" onchange="DateVerif()" required>
+                        </select>
+                    </div>
+                    <label>|</label>
+                    <label>Enfants ( -12 ans):</label>
+                    <div class="voyageurs">
+                        <select name="nb_enfants" id="nb_enfants">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
+                    <div id="petit-dej">
+                        <label>Petit déjeuner (12€ / personnes / jours) :</label>
+                        <input type="checkbox" id="dej_checkbox" name="dej_checkbox" value="1" aria-checked="false">
+                    </div>
+                    <label>Besoin d'un renseignement :</label>
+                    <textarea placeholder="Quel renseignement souhaitez-vous ?" id="story" name="story" rows="5" cols="36"></textarea>
                 </div>
-                <div class="textbox">
-                    <i class="fas fa-calendar-alt"></i>
-                    <input type="date" id="date_retour" name="return" onchange="DateVerif()" required>
-                </div>
-            </div>
-            <div class="supplement">
-                <h3>Nombre de voyageurs</h3>
-                <label>Nombre d'adultres :</label>
-                <div class="voyageurs">
-                    <select name="nb_adultes" id="nb_adultes">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
+                <div class="prix-div">
+                    <h3 id="prix">Prix du voyage :  <span id="prix_voyage"></span></h3>
 
-                    </select>
-                </div>
-                <label>|</label>
-                <label>Enfants ( -12 ans):</label>
-                <div class="voyageurs">
-                    <select name="nb_enfants" id="nb_enfants">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select>
-                </div>
-                <div id="petit-dej">
-                    <label>Petit déjeuner (12€ / personnes / jours) :</label>
-                    <input type="checkbox" id="dej_checkbox" name="dej_checkbox" value="1" aria-checked="false">
-                </div>
-                <label>Besoin d'un renseignement :</label>
-                <textarea placeholder="Quel renseignement souhaitez-vous ?" id="story" name="story" rows="5" cols="36"></textarea>
-            </div>
-            <div class="prix-div">
-                <h3 id="prix">Prix du voyage :  <span id="prix_voyage"></span></h3>
+                    <input type="submit" id="submit-résa" value="Valider">
+                    <input type="button" id="zéro" value="Remise à zéro de la commande" onclick="annulation()">
 
-                <input type="submit" id="submit-résa" value="Valider">
-                <input type="button" id="zéro" value="Remise à zéro de la commande" onclick="annulation()">
-
+                </div>
+            </form>
+            <div id="nom-ville">
+                <h2 id="h2-ville"></h2>
             </div>
-        </form>
-        
+        </div>
 
         <footer>
             <div class="text-footer">© 2020 DandF, Inc.</div>
