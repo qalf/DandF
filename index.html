@@ -23,15 +23,15 @@
 
             </nav>
 
-            <div id="barre-recherche">
+            <div id="barre-recherche"> <!--Recheche d'un voyage-->
                 <input id="barre" type="search" placeholder="Rechercher une destination">
                 <img id ="loupe" src="images/loupe.png" onclick="search()"></i>
             </div>
         </header>
         
-        <div id=container>
+        <div id=container> 
 
-            <div class="filtre">
+            <div class="filtre"> <!--Menu déroulant pour affiner les choix en fonction des continents et du prix croissant ou décroissant-->
                 <select  id="tri" onchange="afficheimg()">
                     <option value="1">Par Continents</option>
                     <option value="2">Prix Croissants</option>
@@ -47,7 +47,7 @@
 
                 </select>
             </div>
-            <div class="filtre">
+            <div class="filtre"> <!--Menu déroulant pour affiner les choix en fonction du prix max souhaité-->
                 <select  id="prixmax" onchange="afficheimg()">
                     <option value="1000">Max : 1000€ / Personne</option>
                     <option value="900">Max : 900€ / Personne</option>
