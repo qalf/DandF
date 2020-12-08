@@ -17,7 +17,7 @@ let delCheckbox = document.getElementsByClassName('del-checkbox');
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
 
-class continent {
+class continent { //Définition d'une classe continent
     constructor(id, link, name) {
         this.id = id;
         this.link = link;
@@ -34,7 +34,7 @@ let IlesP = new continent(5, 'images/Continent/IlesP.jpeg', 'Iles Paradisiaques'
 
 let LstContinent = [Europe,Asie,AmeriqueN,AmeriqueS,Afrique,IlesP];
 
-class ville{
+class ville{ // Définition d'une classe ville
     constructor(id,id_continent,id_croissant,id_décroissant,link,name,continent,prix,name_api,temp){
         this.id = id;
         this.id_continent = id_continent;
@@ -98,7 +98,7 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakech,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
-function search(){
+function search(){ //Recheche les villes disponibles lors de la recherche de l'utilisateur avec la barre de recheche
     if (location.href.split('/').pop('/') ==='index.html'){
         for (var i of LstVille){
             if (barre.value == i.name){
@@ -119,14 +119,14 @@ function search(){
     }
 }
 
-barre.addEventListener('keyup',function(event){
+barre.addEventListener('keyup',function(event){ //Effectue la fonction search lorsque l'utilisateur appuie sur entrée
     if (event.keyCode === 13) {
         loupe.click();
     }
 })
 
 
-function afficheimg() {
+function afficheimg() { //Affiche les images en fonction du continent, du prix croissant et décroissant, de la ville et du trie
     let link = ''
     affichage.innerHTML = '';
 
@@ -220,7 +220,7 @@ function afficheimg() {
     }
 }
 
-function infosimg(i,h) {
+function infosimg(i,h) { //S'active au passage de la souris sur l'image (onemouseover)
     image[i].style.width = "370px";
     image[i].style.height = "267px";
     image[i].style.marginTop = "0px";
@@ -234,7 +234,7 @@ function infosimg(i,h) {
     image[i].setAttribute('onclick', 'resa(' + h + ')');
 }
 
-function delimg(i) {
+function delimg(i) { //onmouseout
     image[i].style.width = "350px";
     image[i].style.height = "237px";
     image[i].style.marginTop = "10px";
@@ -246,7 +246,7 @@ function delimg(i) {
     overlay[i].style.color = "rgba(255, 255, 255,0)" ;
 }
 
-function resa(h) {
+function resa(h) { //Affiche la page Résa selon l'id de l'image
     if (tri.value == '1'){
         for (var i=0 ; i<6 ; i++){
             if (h === i){
@@ -309,7 +309,7 @@ function resa(h) {
     }
 }
 
-function affichetemp() {
+function affichetemp() { //Affiche la température de la ville d'après l'API OnpenWeathermap
     for (let i of LstVille) {
     	fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name_api+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
     	.then(res => res.json())
@@ -321,7 +321,7 @@ function affichetemp() {
     }
 }
 
-function connexionload(){
+function connexionload(){ // Cherche dans le localstorage si le compte existe
     connexion.addEventListener('submit', function(event){
         let user = document.getElementById('nom-utilisateur').value;
         let mdp = document.getElementById('mdp').value;
