@@ -5,7 +5,6 @@ var tri = document.getElementById('tri');
 let barre = document.getElementById('barre');
 let loupe = document.getElementById('loupe');
 var prixmax = document.getElementById('prixmax');
-let path = window.location.pathname;
 let connexion = document.getElementById('connexion');
 let mdp = document.getElementById('mdp');
 let utilisateur = document.getElementById('nom-utilisateur');
@@ -14,6 +13,7 @@ let compte = document.getElementById('compte');
 let submitResa = document.getElementById('resa');
 let panierVoyage = document.getElementById('panier-voyage');
 let divPrix = document.getElementById('prixtot');
+let delCheckbox = document.getElementsByClassName('del-checkbox');
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
 
@@ -519,7 +519,7 @@ function panier(){
             if (moisR<10){
                 var moisR = 0+moisR;
             }
-            affichepanier += '<div class="voyage" onclick="modif('+id+','+i+')"><div class ="nom-ville">'+ ville +'</div><div class="dateD">du : '+'<input class="date" type="date" value="'+annéeD+'-'+moisD+'-'+ jourD +'" disabled></div>'+'<div class="dateR">au :  '+'<input  class="date" type="date" value="'+annéeR+'-'+moisR+'-'+ jourR +'" disabled></div><div class="prix">Prix : '+prix+' €</div>'+'<div class="numéro-résa">n°: '+numéro+'</div></div>';
+            affichepanier += '<div class="voyage" onclick="modif('+id+','+i+')"><div class ="nom-ville">'+ ville +'</div><div class="dateD">du : '+'<input class="date" type="date" value="'+annéeD+'-'+moisD+'-'+ jourD +'" disabled></div>'+'<div class="dateR">au :  '+'<input  class="date" type="date" value="'+annéeR+'-'+moisR+'-'+ jourR +'" disabled></div><div class="prix">Prix : '+prix+' €</div>'+'<div class="numéro-résa">n°: '+numéro+'</div></div><input type="checkbox" class="del-checkbox" name="del" onchange="del()" value="'+i+'" aria-checked="false">';
         }  
     }
     panierVoyage.innerHTML += affichepanier;
@@ -532,4 +532,16 @@ function modif(i,h){
     var id = i;
     var lien = 'Résa.html?id='+id;
     window.location.assign(lien);
+}
+
+function del(){
+    for (var i=0;i<30;i++){
+        if (delCheckbox[i] != null){
+            if (delCheckbox[i].checked === true){
+                let index = delCheckbox[i].value;
+                localStorage.removeItem('voyage'+index);
+                location.reload();
+            }
+        }
+    }    
 }
