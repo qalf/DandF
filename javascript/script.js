@@ -99,7 +99,7 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakesh,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 function search(){
-    if (path == '/DandF/index.html' || path == '/DandF/'){
+    if (location.href.split('/').pop('/') ==='index.html'){
         for (var i of LstVille){
             if (barre.value == i.name){
                 tri.value = 10;
@@ -406,14 +406,17 @@ function DateVerif() {
     var dateretour = new Date(document.getElementById("date_retour").value);
     if (dateretour < datedepart){
         date_retour.value = "";
+        alert("Veuillez rentrer une date de retour postérieur à la date de départ");
         return 
     }
     if (datedepart < datejour){
         date_depart.value = "";
+        alert("Veuillez rentrer une date postérieur à aujourd'hui");
         return
     }
     if (dateretour < datejour){
         date_retour.value = "";
+        alert("Veuillez rentrer une date postérieur à aujourd'hui");
         return
     }
 }
