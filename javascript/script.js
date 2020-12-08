@@ -14,6 +14,7 @@ let submitResa = document.getElementById('resa');
 let panierVoyage = document.getElementById('panier-voyage');
 let divPrix = document.getElementById('prixtot');
 let delCheckbox = document.getElementsByClassName('del-checkbox');
+let h2Ville = document.getElementById('h2-ville');
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
 
@@ -386,7 +387,10 @@ function creacompte(){ // Création du compte
     })
 }
 
-
+function NomVille(){
+    let name = LstVille[sejour_id].name;
+    h2Ville.innerHTML = name;
+}
 
 function CalculPrixBase() { // Récupère le prix de base de la ville en fonction de l'id
     var PrixBase = LstVille[sejour_id].prix;

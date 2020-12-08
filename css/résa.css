@@ -1,7 +1,38 @@
+#container-Résa{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
+}
+
+#nom-ville{
+    width: 30%;
+    height: 100px;
+    color: white;
+    margin: 3% 5%;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background-color: #1b1b1f;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+}
+
+#nom-ville h2{
+    width: 75%;
+    font-size: 350%;
+    text-align: center;
+    margin: 0;
+    padding: 3%;
+}
+
 #resa{
     width: 30%;
     color: white;
-    margin: 3% 10%;
+    margin: 3% 5%;
     border: 2px solid #ffffff;
     padding: 2%;
     border-radius: 10px;
