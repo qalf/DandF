@@ -362,7 +362,7 @@ function deconnection(){ // Déconnection (logo de connexion barré)
     location.reload();
 }
 
-function creacompte(){ // Création du compte en mettant mdp et nom d'utilisateur dans le local storage
+function creacompte(){ // Affiche le form de création du compte et met les mdp et nom d'utilisateur dans le local storage si quelqu'un s'inscrit
     loginBox2.innerHTML = '<form id="connexion2"><h2>Création compte</h2><div class="textbox"><i class="fas fa-user"></i><input id="nom-utilisateur2" type="text" placeholder="Nom utilisateur" required></div><div class="textbox"><i class="fas fa-envelope"></i><input id="email" type="email" placeholder="E-mail" required></div><div class="textbox"><i class="fas fa-lock"></i><input id="mdp20" type="password" placeholder="Mot de passe" required></div><div class="textbox"><i class="fas fa-lock"></i><input id="mdp21" type="password" placeholder="Confirmation mot de passe" required></div><input type="submit" id="btn" value="Créer"><input type="button" id="btn2" value="Se connecter" onclick="location.reload()"></form>';
     connexion2.addEventListener('submit', function(event){
         event.preventDefault();
