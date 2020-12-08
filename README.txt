@@ -16,6 +16,5 @@ puisse l'utiliser facilement.
 	- On devrait pouvoir rentrer les dates manuellement dans le formulaire de réservation (clavier numérique)
 	- Ajout d'une page de confirmation d'achat de panier avec mot de remerciement et envoie d'un mail
 	- Ajout d'éléments dans le formulaire de réservation
-
-
-
+    - Si on avait eu plus de liberté, on aurait pu ajouter une base de données qui contient des images de chaque villes et une descritpion de chaque villes
+    qu'on pourrait afficher sur la page de réservation

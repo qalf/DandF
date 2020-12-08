@@ -104,7 +104,7 @@ function search(){ // Affiche la ville quand on tape le nom dans la search barre
         for (var i of LstVille){
             if (barre.value == i.name){
                 tri.value = 10;
-                return affichage.innerHTML = '<div class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
+                return affichage.innerHTML = '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ 0 +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
             }
         }
         alert("La destination n'est pas encore dans notre catalogue");
@@ -133,7 +133,7 @@ function afficheimg() { // Affiche les images en fonction du trie
 
     if (tri.value == '1'){
         for (var i of LstContinent) {
-            link += '<div class ="image" onmouseover="infosimg('+ i.id +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
+            link += '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ i.id +','+ i.id +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'</div></div>';
         }
         affichage.innerHTML += link;
     }
@@ -141,7 +141,7 @@ function afficheimg() { // Affiche les images en fonction du trie
     else if (tri.value == '2') {
         for (var i of PrixCroissant) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
+                link += '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ i.id_croissant +','+ i.id_croissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
             }
         }
         affichage.innerHTML += link;
@@ -151,7 +151,7 @@ function afficheimg() { // Affiche les images en fonction du trie
         var c = 0;
         for (var i of PrixDécroissant) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
+                link += '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ c +','+ i.id_décroissant +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -162,7 +162,7 @@ function afficheimg() { // Affiche les images en fonction du trie
         var c = 0;
         for (var i of LstEurope) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
+                link += '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+i.name+'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -173,7 +173,7 @@ function afficheimg() { // Affiche les images en fonction du trie
         var c = 0;
         for (var i of LstAsie) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
+                link += '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -183,7 +183,7 @@ function afficheimg() { // Affiche les images en fonction du trie
         var c = 0;
         for (var i of LstAmeriqueN) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
+                link += '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -193,7 +193,7 @@ function afficheimg() { // Affiche les images en fonction du trie
         var c = 0;
         for (var i of LstAmeriqueS) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
+                link += '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -203,7 +203,7 @@ function afficheimg() { // Affiche les images en fonction du trie
         var c = 0;
         for (var i of LstAfrique) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
+                link += '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -213,7 +213,7 @@ function afficheimg() { // Affiche les images en fonction du trie
         var c = 0;
         for (var i of LstIlesP) {
             if (i.prix < prixmax.value){
-                link += '<div class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
+                link += '<div alt="image de '+i.name+'" class ="image" onmouseover="infosimg('+ c +','+ i.id_continent +')" style=background-image:url("'+ i.link +'") ><div class = "overlay">'+ i.name +'<br>'+ i.temp +'°C</div></div>';
                 c++;
             }
         }
@@ -221,7 +221,7 @@ function afficheimg() { // Affiche les images en fonction du trie
     }
 }
 
-function infosimg(i,h) { // Onmouseover de l'image, zoom sur celle si et fait apparaitre l'overlay
+function infosimg(i,h) { // Onmouseover de l'image, zoom sur celle-ci et fait apparaitre l'overlay
     image[i].style.width = "370px";
     image[i].style.height = "267px";
     image[i].style.marginTop = "0px";
