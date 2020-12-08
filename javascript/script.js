@@ -18,7 +18,7 @@ let h2Ville = document.getElementById('h2-ville');
 let sejour_id = new URLSearchParams(window.location.search).get("id");
 
 
-class continent { //Définition d'une classe continent
+class continent { // Définition d'une classe continent
     constructor(id, link, name) {
         this.id = id;
         this.link = link;
@@ -99,7 +99,7 @@ let LstIlesP = [Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
 let LstVille = [Paris,Barcelone,Londres,Rome,Stockholm,Bangkok,Bombay,Hanoï,HongKong,Pékin,Tokyo,Cancun, LosAngeles, Miami,Montreal,NewYork,BuenosAires,LacTiticaca,Lima,Rio,CapeTown,Casablanca,Dubai,LeCaire,Marrakech,Auckland,Caraibes,Hawai,Seychelles,Singapour,Ubud];
 
-function search(){ //Recheche les villes disponibles lors de la recherche de l'utilisateur avec la barre de recheche
+function search(){ // Affiche la ville quand on tape le nom dans la search barre ou renvoie vers l'index.html si on est sur une autre page
     if (location.href.split('/').pop('/') ==='index.html'){
         for (var i of LstVille){
             if (barre.value == i.name){
@@ -120,14 +120,14 @@ function search(){ //Recheche les villes disponibles lors de la recherche de l'u
     }
 }
 
-barre.addEventListener('keyup',function(event){ //Effectue la fonction search lorsque l'utilisateur appuie sur entrée
+barre.addEventListener('keyup',function(event){ // Effectue la fonction search lorsque l'utilisateur appuie sur entrée dans la search barre
     if (event.keyCode === 13) {
         loupe.click();
     }
 })
 
 
-function afficheimg() { //Affiche les images en fonction du continent, du prix croissant et décroissant, de la ville et du trie
+function afficheimg() { // Affiche les images en fonction du trie
     let link = ''
     affichage.innerHTML = '';
 
@@ -221,7 +221,7 @@ function afficheimg() { //Affiche les images en fonction du continent, du prix c
     }
 }
 
-function infosimg(i,h) { //S'active au passage de la souris sur l'image (onemouseover)
+function infosimg(i,h) { // Onmouseover de l'image, zoom sur celle si et fait apparaitre l'overlay
     image[i].style.width = "370px";
     image[i].style.height = "267px";
     image[i].style.marginTop = "0px";
@@ -235,7 +235,7 @@ function infosimg(i,h) { //S'active au passage de la souris sur l'image (onemous
     image[i].setAttribute('onclick', 'resa(' + h + ')');
 }
 
-function delimg(i) { //onmouseout
+function delimg(i) { // Onmouseout de l'image, retire le zoom et l'overlay
     image[i].style.width = "350px";
     image[i].style.height = "237px";
     image[i].style.marginTop = "10px";
@@ -247,7 +247,7 @@ function delimg(i) { //onmouseout
     overlay[i].style.color = "rgba(255, 255, 255,0)" ;
 }
 
-function resa(h) { //Affiche la page Résa selon l'id de l'image
+function resa(h) { // Affiche la page de réservation selon l'id de l'image sur laquel on a cliqué
     if (tri.value == '1'){
         for (var i=0 ; i<6 ; i++){
             if (h === i){
@@ -310,7 +310,7 @@ function resa(h) { //Affiche la page Résa selon l'id de l'image
     }
 }
 
-function affichetemp() { //Affiche la température de la ville d'après l'API OnpenWeathermap
+function affichetemp() { // Affiche la température de la ville avec l'API OnpenWeathermap
     for (let i of LstVille) {
     	fetch('https://api.openweathermap.org/data/2.5/weather?q='+i.name_api+'&units=metric&appid=aaed9a489f3afb122bc1ac8d09c79637')
     	.then(res => res.json())
@@ -322,7 +322,7 @@ function affichetemp() { //Affiche la température de la ville d'après l'API On
     }
 }
 
-function connexionload(){ // Cherche dans le localstorage si le compte existe
+function connexionload(){ // Cherche dans le localstorage si le compte a été créé, si oui il se connect
     connexion.addEventListener('submit', function(event){
         let user = document.getElementById('nom-utilisateur').value;
         let mdp = document.getElementById('mdp').value;
@@ -349,20 +349,20 @@ function connect(){ // Renvoie un message pour signifier que l'utilisateur est c
     location.reload();
 }
 
-function EstConnecté(){ // Vérifie si sur chaque page que l'utilisateur est connecté
+function EstConnecté(){ // Vérifie sur chaque page que l'utilisateur est connecté (logo de connexion non barré)
     if (localStorage.getItem('co') === 'true'){
         compte.innerHTML = '<i class="fas fa-user"></i>';
     }
 }
 
-function deconnection(){ // Déconnection
+function deconnection(){ // Déconnection (logo de connexion barré)
     localStorage.setItem('co', false);
     compte.innerHTML = '<i class="fas fa-user"></i>';
     alert("Vous êtes deconnecté");
     location.reload();
 }
 
-function creacompte(){ // Création du compte
+function creacompte(){ // Création du compte en mettant mdp et nom d'utilisateur dans le local storage
     loginBox2.innerHTML = '<form id="connexion2"><h2>Création compte</h2><div class="textbox"><i class="fas fa-user"></i><input id="nom-utilisateur2" type="text" placeholder="Nom utilisateur" required></div><div class="textbox"><i class="fas fa-envelope"></i><input id="email" type="email" placeholder="E-mail" required></div><div class="textbox"><i class="fas fa-lock"></i><input id="mdp20" type="password" placeholder="Mot de passe" required></div><div class="textbox"><i class="fas fa-lock"></i><input id="mdp21" type="password" placeholder="Confirmation mot de passe" required></div><input type="submit" id="btn" value="Créer"><input type="button" id="btn2" value="Se connecter" onclick="location.reload()"></form>';
     connexion2.addEventListener('submit', function(event){
         event.preventDefault();
@@ -387,12 +387,12 @@ function creacompte(){ // Création du compte
     })
 }
 
-function NomVille(){
+function NomVille(){ // Affiche le nom de la ville en fonction de son id sur la page de réservation
     let name = LstVille[sejour_id].name;
     h2Ville.innerHTML = name;
 }
 
-function CalculPrixBase() { // Récupère le prix de base de la ville en fonction de l'id
+function CalculPrixBase() { // Récupère le prix de base de la ville en fonction de l'id sur la page de réservation
     var PrixBase = LstVille[sejour_id].prix;
     return PrixBase
 }
@@ -444,7 +444,7 @@ function petitDej(){ // Calcul le prix du petit déjeuner par personne et par jo
     return dej
 }
 
-function prixTotal(){ // Calcul le prix total du séjour 
+function prixTotal(){ // Calcul le prix total du séjour et l'affiche dynamiquement
     var prixTotal = prixEnfants() + prixAdultes() + petitDej();
     if (prixTotal > 1){
         document.getElementById("prix_voyage").innerHTML = prixTotal;
@@ -456,7 +456,7 @@ function annulation(){ // Remise à zéro du formulaire
     location.reload();
 }
 
-function submitR(){ //Met les données du form en localstorage sous forme de liste et renvoie vers le panier
+function submitR(){ // Met les données du form en localstorage sous forme de liste et renvoie vers le panier
     submitResa.addEventListener('submit', function(event){
         event.preventDefault();
         let ville = LstVille[sejour_id].name;
@@ -487,13 +487,13 @@ function submitR(){ //Met les données du form en localstorage sous forme de lis
 
 }
 
-function getRandomInt(min,max) { // Numéro du voyage aléatoire
+function getRandomInt(min,max) { // Numéro de voyage aléatoire
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function panier(){ // Affiche les différentes infos du panier
+function panier(){ // Affiche les différents voyages du panier si il y en a en les récupérant dans le local storage
     var affichepanier = '';
     var prixtot = 0;
     for (var i=0;i<30;i++){
@@ -530,7 +530,7 @@ function panier(){ // Affiche les différentes infos du panier
     divPrix.innerHTML = 'Prix Total : '+prixtot + ' €';
 }
 
-function modif(i,h){ // Permet de modifier la réservation lorsque l'utilisateur est dans le panier
+function modif(i,h){ // Permet de modifier la réservation lorsque l'utilisateur est dans le panier en cliquant sur le voyage
     var index = h;
     localStorage.removeItem('voyage'+index);
     var id = i;
