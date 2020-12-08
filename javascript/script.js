@@ -342,26 +342,26 @@ function connexionload(){
 
 
    
-function connect(){
+function connect(){ // Renvoie un message pour signifier que l'utilisateur est connecté
     alert("Vous êtes connecté");
     localStorage.setItem('co', true);
     location.reload();
 }
 
-function EstConnecté(){
+function EstConnecté(){ // Vérifie si sur chaque page que l'utilisateur est connecté
     if (localStorage.getItem('co') === 'true'){
         compte.innerHTML = '<i class="fas fa-user"></i>';
     }
 }
 
-function deconnection(){
+function deconnection(){ // Déconnection
     localStorage.setItem('co', false);
     compte.innerHTML = '<i class="fas fa-user"></i>';
     alert("Vous êtes deconnecté");
     location.reload();
 }
 
-function creacompte(){
+function creacompte(){ // Création du compte
     loginBox2.innerHTML = '<form id="connexion2"><h2>Création compte</h2><div class="textbox"><i class="fas fa-user"></i><input id="nom-utilisateur2" type="text" placeholder="Nom utilisateur" required></div><div class="textbox"><i class="fas fa-envelope"></i><input id="email" type="email" placeholder="E-mail" required></div><div class="textbox"><i class="fas fa-lock"></i><input id="mdp20" type="password" placeholder="Mot de passe" required></div><div class="textbox"><i class="fas fa-lock"></i><input id="mdp21" type="password" placeholder="Confirmation mot de passe" required></div><input type="submit" id="btn" value="Créer"><input type="button" id="btn2" value="Se connecter" onclick="location.reload()"></form>';
     connexion2.addEventListener('submit', function(event){
         event.preventDefault();
@@ -388,19 +388,19 @@ function creacompte(){
 
 
 
-function CalculPrixBase() {
+function CalculPrixBase() { // Récupère le prix de base de la ville en fonction de l'id
     var PrixBase = LstVille[sejour_id].prix;
     return PrixBase
 }
 
-function dureeSejour() {
+function dureeSejour() { // Récupère la durée du séjour en fonction des dates séléctionnées
     var datedepart = new Date(document.getElementById("date_depart").value);
     var dateretour = new Date(document.getElementById("date_retour").value);
     date = parseInt((dateretour - datedepart)/(86400000));
     return date
 }
 
-function DateVerif() {
+function DateVerif() { // Vérification des dates entrées par l'utilisateur et renvoie un message d'alerte
     var datejour = new Date();
     var datedepart = new Date(document.getElementById("date_depart").value);
     var dateretour = new Date(document.getElementById("date_retour").value);
@@ -421,17 +421,17 @@ function DateVerif() {
     }
 }
 
-function prixEnfants(){
+function prixEnfants(){ // Calcul le prix enfant 
     var prixEnfants = 0.4*CalculPrixBase()*dureeSejour()*document.getElementById("nb_enfants").value;
     return prixEnfants
 }
 
-function prixAdultes() {
+function prixAdultes() { // Calcul le prix adulte
     var prixAdultes = dureeSejour()*CalculPrixBase()*document.getElementById("nb_adultes").value;
     return prixAdultes
 }
 
-function petitDej(){
+function petitDej(){ // Calcul le prix du petit déjeuner par personne et par jour
     var checkbox = document.getElementById("dej_checkbox");
     var dej = 0;
     if (checkbox.checked == true){
@@ -440,19 +440,19 @@ function petitDej(){
     return dej
 }
 
-function prixTotal(){
+function prixTotal(){ // Calcul le prix total du séjour 
     var prixTotal = prixEnfants() + prixAdultes() + petitDej();
     if (prixTotal > 1){
         document.getElementById("prix_voyage").innerHTML = prixTotal;
     }
 }
 
-function annulation(){
+function annulation(){ // Remise à zéro du formulaire
     document.getElementById("resa").reset();
     location.reload();
 }
 
-function submitR(){
+function submitR(){ //Met les données du form en localstorage sous forme de liste et renvoie vers le panier
     submitResa.addEventListener('submit', function(event){
         event.preventDefault();
         let ville = LstVille[sejour_id].name;
@@ -483,13 +483,13 @@ function submitR(){
 
 }
 
-function getRandomInt(min,max) {
+function getRandomInt(min,max) { // Numéro du voyage aléatoire
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function panier(){
+function panier(){ // Affiche les différentes infos du panier
     var affichepanier = '';
     var prixtot = 0;
     for (var i=0;i<30;i++){
@@ -526,7 +526,7 @@ function panier(){
     divPrix.innerHTML = 'Prix Total : '+prixtot + ' €';
 }
 
-function modif(i,h){
+function modif(i,h){ // Permet de modifier la réservation lorsque l'utilisateur est dans le panier
     var index = h;
     localStorage.removeItem('voyage'+index);
     var id = i;
@@ -534,7 +534,7 @@ function modif(i,h){
     window.location.assign(lien);
 }
 
-function del(){
+function del(){ // Permet de supprimer le voyage dans le panier
     for (var i=0;i<30;i++){
         if (delCheckbox[i] != null){
             if (delCheckbox[i].checked === true){
